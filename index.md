@@ -1,38 +1,54 @@
-## Welcome to GitHub Pages
+---
+title: Home
+description: Phalanx is a tactical head-to-head card duel you can play with standard suited decks.
+---
 
-You can use the [editor on GitHub](https://github.com/just3ws/phalanx/edit/main/docs/index.md) to maintain and preview the content for your website in Markdown files.
+<section class="hero" aria-labelledby="hero-title">
+  <h1 id="hero-title">Phalanx: Tactical Card Duels, Anywhere</h1>
+  <p>Phalanx is a head-to-head card game built around formation combat, suit-driven tactics, and clean decisions. You can play with a standard suited deck, no specialty cards required.</p>
+  <p class="small-note">Best experience: one deck per player. Any standard suited deck works.</p>
+  <div class="cta-row">
+    <a class="button-link" href="{{ '/how-to-play/' | relative_url }}">Get Started in 60 Seconds</a>
+    <a class="button-link secondary" href="{{ '/rules/' | relative_url }}">Read Intro Rules</a>
+  </div>
+</section>
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+<section class="grid three" aria-label="Core pillars">
+  <article class="card">
+    <h2>Play With Standard Cards</h2>
+    <p>Use Ace through King in all four suits. Jokers are optional and currently treated as a future expansion path.</p>
+  </article>
+  <article class="card">
+    <h2>Formation-Based Combat</h2>
+    <p>Build two rows of squads, attack by column, and manage how damage overflows from front line to back line to player LP.</p>
+  </article>
+  <article class="card">
+    <h2>Suit Identity Matters</h2>
+    <p><strong>Hearts + Diamonds</strong> function as Shields. <strong>Spades + Clubs</strong> function as Weapons.</p>
+  </article>
+</section>
 
-### Markdown
+<section class="card" aria-labelledby="sixty-seconds">
+  <h2 id="sixty-seconds">Get Started in 60 Seconds</h2>
+  <ol class="quick-list">
+    <li>Grab one standard suited deck per player (ideal), or any standard suited deck to start.</li>
+    <li>Set up each side as a two-row formation.</li>
+    <li>Take turns attacking by column with front-row cards.</li>
+    <li>Track overflow from front card to back card to player LP.</li>
+    <li>Use suit strengths: Shields (Hearts, Diamonds), Weapons (Spades, Clubs).</li>
+  </ol>
+  <p><a href="{{ '/how-to-play/' | relative_url }}">Open the full quickstart.</a></p>
+</section>
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+<section class="two-col" aria-label="Why players like it">
+  <article class="card">
+    <h2>Built for Duel Fans</h2>
+    <p>Phalanx keeps the tension of tactical card combat while staying portable enough for kitchen tables, cafes, and travel sessions.</p>
+  </article>
+  <article class="card">
+    <h2>Digital Version in Development</h2>
+    <p>A real-time digital head-to-head battle game based on these rules is actively being developed.</p>
+  </article>
+</section>
 
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/just3ws/phalanx/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
-
+<p class="small-note">Rules are evolving. This website is an introductory guide; canonical draft rules live in the main Phalanx repository.</p>

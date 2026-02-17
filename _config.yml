@@ -1,3 +1,13 @@
----
-theme: jekyll-theme-minimal
-
+title: Phalanx
+description: A tactical head-to-head card duel you can play with standard suited decks.
+url: https://just3ws.github.io
+baseurl: /phalanx
+permalink: pretty
+markdown: kramdown
+kramdown:
+  input: GFM
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default

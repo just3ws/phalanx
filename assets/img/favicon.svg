@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Phalanx favicon">
+  <rect width="128" height="128" rx="18" fill="#10151c"/>
+  <rect x="18" y="18" width="92" height="92" rx="12" fill="#202b38" stroke="#c8a55a" stroke-width="4"/>
+  <path d="M42 38h44v14H64v42H50V52H42z" fill="#e9edf3"/>
+  <circle cx="94" cy="94" r="8" fill="#c8a55a"/>
+</svg>
