@@ -41,9 +41,24 @@ Pipeline commands:
 
 - `./bin/pipeline build`
 - `./bin/pipeline validate`
+- `./bin/pipeline a11y`
 - `./bin/pipeline smoke`
 - `./bin/pipeline test`
 - `./bin/pipeline ci`
+
+Accessibility policy:
+
+- CI treats accessibility as a release gate.
+- `./bin/pipeline a11y` runs browser-level checks (axe-core + keyboard contract).
+- In local shells this step is skipped by default to avoid mandatory browser package downloads.
+- Force it locally with `FORCE_A11Y_BROWSER=1 ./bin/pipeline a11y`.
+
+Manual accessibility checklist before publish:
+
+1. Keyboard only: verify skip-link first focus target and full nav traversal without traps.
+2. Screen reader smoke pass on Home, How to Play, Rules, History, FAQ.
+3. Zoom to 200% and confirm no content loss or clipped controls.
+4. Reduced motion mode (`prefers-reduced-motion`) remains usable and readable.
 
 ## Content Editing Guide
 

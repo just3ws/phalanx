@@ -8,9 +8,10 @@ Usage: ./bin/pipeline <command>
 Commands:
   build     Build _site with Jekyll.
   validate  Run semantic/a11y checks and html-proofer against _site.
+  a11y      Run browser-level axe-core + keyboard accessibility audit.
   smoke     Run Playwright smoke checks against built _site.
   test      Run RSpec (if specs exist).
-  ci        Run build + test (if present) + validate.
+  ci        Run build + test (if present) + validate + a11y (CI/default).
   help      Show this help.
 USAGE
 }
@@ -82,6 +83,26 @@ run_smoke() {
   ./bin/smoke_playwright.sh
 }
 
+run_a11y() {
+  if [ ! -d _site ]; then
+    echo "Missing _site directory. Run './bin/pipeline build' first." >&2
+    exit 1
+  fi
+
+  if [ "${CI:-}" = "true" ] || [ "${FORCE_A11Y_BROWSER:-}" = "1" ]; then
+    npx --yes --package playwright playwright install chromium >/dev/null
+    PORT="${PORT:-4173}"
+    python3 -m http.server "$PORT" --directory _site >/tmp/phalanx-a11y-server.log 2>&1 &
+    SERVER_PID="$!"
+    trap 'if kill -0 "$SERVER_PID" >/dev/null 2>&1; then kill "$SERVER_PID" >/dev/null 2>&1 || true; fi' EXIT INT TERM
+    A11Y_BASE_URL="http://127.0.0.1:${PORT}" \
+      npx --yes --package playwright --package @axe-core/playwright node ./bin/a11y_playwright.cjs
+    kill "$SERVER_PID" >/dev/null 2>&1 || true
+  else
+    echo "Skipping browser a11y audit locally. Set FORCE_A11Y_BROWSER=1 to run it."
+  fi
+}
+
 command="${1:-help}"
 case "$command" in
   build)
@@ -93,6 +114,9 @@ case "$command" in
   smoke)
     run_smoke
     ;;
+  a11y)
+    run_a11y
+    ;;
   test)
     run_test
     ;;
@@ -100,6 +124,7 @@ case "$command" in
     run_build
     run_test
     run_validate
+    run_a11y
     ;;
   help|-h|--help)
     usage

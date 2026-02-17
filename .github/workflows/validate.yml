@@ -21,6 +21,9 @@ jobs:
           ruby-version: 3.4.8
           bundler-cache: true
 
+      - name: Install Playwright Chromium
+        run: npx --yes --package playwright playwright install --with-deps chromium
+
       - name: Build and validate Jekyll output
         run: ./bin/pipeline ci
 
