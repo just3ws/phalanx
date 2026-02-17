@@ -90,13 +90,25 @@ run_a11y() {
   fi
 
   if [ "${CI:-}" = "true" ] || [ "${FORCE_A11Y_BROWSER:-}" = "1" ]; then
-    npx --yes --package playwright playwright install chromium >/dev/null
+    if ! command -v node >/dev/null 2>&1; then
+      echo "node is required for browser a11y audit." >&2
+      exit 1
+    fi
+    if ! command -v npx >/dev/null 2>&1; then
+      echo "npx is required for browser a11y audit." >&2
+      exit 1
+    fi
+    if ! command -v python3 >/dev/null 2>&1; then
+      echo "python3 is required for browser a11y audit server." >&2
+      exit 1
+    fi
+
+    npx playwright install chromium >/dev/null
     PORT="${PORT:-4173}"
     python3 -m http.server "$PORT" --directory _site >/tmp/phalanx-a11y-server.log 2>&1 &
     SERVER_PID="$!"
     trap 'if kill -0 "$SERVER_PID" >/dev/null 2>&1; then kill "$SERVER_PID" >/dev/null 2>&1 || true; fi' EXIT INT TERM
-    A11Y_BASE_URL="http://127.0.0.1:${PORT}" \
-      npx --yes --package playwright --package @axe-core/playwright node ./bin/a11y_playwright.cjs
+    A11Y_BASE_URL="http://127.0.0.1:${PORT}" node ./bin/a11y_playwright.cjs
     kill "$SERVER_PID" >/dev/null 2>&1 || true
   else
     echo "Skipping browser a11y audit locally. Set FORCE_A11Y_BROWSER=1 to run it."

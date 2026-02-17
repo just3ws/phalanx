@@ -30,7 +30,9 @@ jobs:
           bundle install --jobs 4
 
       - name: Install Playwright Chromium
-        run: npx --yes --package playwright playwright install --with-deps chromium
+        run: |
+          npm install --no-save playwright @axe-core/playwright
+          npx playwright install --with-deps chromium
 
       - name: Build and validate Jekyll output
         run: ./bin/pipeline ci
