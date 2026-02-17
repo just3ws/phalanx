@@ -1,0 +1,112 @@
+#!/usr/bin/env sh
+set -eu
+
+usage() {
+  cat <<'USAGE'
+Usage: ./bin/pipeline <command>
+
+Commands:
+  build     Build _site with Jekyll.
+  validate  Run semantic/a11y checks and html-proofer against _site.
+  smoke     Run Playwright smoke checks against built _site.
+  test      Run RSpec (if specs exist).
+  ci        Run build + test (if present) + validate.
+  help      Show this help.
+USAGE
+}
+
+check_runtime() {
+  if [ -f .tool-versions ]; then
+    required_ruby="$(awk '/^ruby /{print $2; exit}' .tool-versions || true)"
+    if [ -n "${required_ruby:-}" ]; then
+      actual_ruby="$(ruby -e 'print RUBY_VERSION')"
+      if [ "$actual_ruby" != "$required_ruby" ]; then
+        echo "Ruby version mismatch: expected $required_ruby, got $actual_ruby" >&2
+        exit 1
+      fi
+    fi
+  fi
+}
+
+run_build() {
+  check_runtime
+  export JEKYLL_ENV=production
+  bundle exec jekyll clean --verbose
+  bundle exec jekyll build --verbose
+}
+
+run_test() {
+  check_runtime
+  if [ -d spec ] && find spec -name '*_spec.rb' -print -quit | grep -q .; then
+    bundle exec rspec
+  else
+    echo "No spec files found; skipping rspec."
+  fi
+}
+
+run_validate() {
+  check_runtime
+
+  if [ ! -d _site ]; then
+    echo "Missing _site directory. Run './bin/pipeline build' first." >&2
+    exit 1
+  fi
+
+  ruby ./bin/validate_semantic_output.rb
+
+  baseurl="$(ruby -ryaml -e 'cfg = YAML.load_file("_config.yml") rescue {}; print((cfg["baseurl"] || "").to_s)')"
+  symlink_path=""
+  if [ -n "$baseurl" ] && [ "$baseurl" != "/" ]; then
+    base_segment="$(printf '%s' "$baseurl" | sed 's#^/##; s#/$##')"
+    symlink_path="_site/${base_segment}"
+    if [ ! -e "$symlink_path" ]; then
+      ln -s . "$symlink_path"
+      trap 'rm -f "$symlink_path"' EXIT INT TERM
+    fi
+  fi
+
+  bundle exec htmlproofer ./_site \
+    --disable-external \
+    --ignore-files "/AGENTS\\.html$/"
+
+  if [ -n "$symlink_path" ] && [ -L "$symlink_path" ]; then
+    rm -f "$symlink_path"
+  fi
+}
+
+run_smoke() {
+  if [ ! -d _site ]; then
+    echo "Missing _site directory. Run './bin/pipeline build' first." >&2
+    exit 1
+  fi
+  ./bin/smoke_playwright.sh
+}
+
+command="${1:-help}"
+case "$command" in
+  build)
+    run_build
+    ;;
+  validate)
+    run_validate
+    ;;
+  smoke)
+    run_smoke
+    ;;
+  test)
+    run_test
+    ;;
+  ci)
+    run_build
+    run_test
+    run_validate
+    ;;
+  help|-h|--help)
+    usage
+    ;;
+  *)
+    echo "Unknown command: $command" >&2
+    usage >&2
+    exit 1
+    ;;
+esac

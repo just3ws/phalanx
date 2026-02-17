@@ -1,0 +1,28 @@
+name: Build and Validate Site
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 25
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.4.8
+          bundler-cache: true
+
+      - name: Build and validate Jekyll output
+        run: ./bin/pipeline ci
+
+      - name: Playwright smoke check
+        run: ./bin/pipeline smoke

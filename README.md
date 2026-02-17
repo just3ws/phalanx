@@ -16,6 +16,10 @@ Manual commands:
 2. `bundle exec jekyll build`
 3. `bundle exec jekyll serve --livereload --host 127.0.0.1 --port 4000`
 
+Alternative local server script:
+
+- `./bin/server`
+
 ## GitHub Pages Configuration
 
 - Branch: `gh-pages`
@@ -23,6 +27,23 @@ Manual commands:
 - Tooling: vanilla Jekyll (GitHub Pages compatible)
 
 The site uses `_layouts`, `_includes`, Markdown content pages, and `assets/` for styles and images.
+
+## CI and Validation Tooling
+
+The repository now mirrors the core validation structure used in your primary site tooling:
+
+- GitHub Actions workflow: `.github/workflows/validate.yml`
+- Pipeline entrypoint: `bin/pipeline`
+- Semantic/a11y validator: `bin/validate_semantic_output.rb`
+- Browser smoke test: `bin/smoke_playwright.sh`
+
+Pipeline commands:
+
+- `./bin/pipeline build`
+- `./bin/pipeline validate`
+- `./bin/pipeline smoke`
+- `./bin/pipeline test`
+- `./bin/pipeline ci`
 
 ## Content Editing Guide
 
