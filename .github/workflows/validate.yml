@@ -19,7 +19,13 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: 3.4.8
-          bundler-cache: true
+          bundler-cache: false
+
+      - name: Install Ruby dependencies
+        run: |
+          bundle config set path vendor/bundle
+          bundle lock --add-platform x86_64-linux
+          bundle install --jobs 4
 
       - name: Install Playwright Chromium
         run: npx --yes --package playwright playwright install --with-deps chromium
