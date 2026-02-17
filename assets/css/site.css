@@ -289,6 +289,33 @@ summary {
   border-radius: 0.55rem;
 }
 
+.history-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+  gap: 0.9rem;
+}
+
+.history-gallery figure {
+  margin: 0;
+  border: 1px solid var(--line);
+  border-radius: 0.6rem;
+  overflow: hidden;
+  background: rgba(16, 22, 30, 0.6);
+}
+
+.history-gallery img {
+  display: block;
+  width: 100%;
+  height: 12.5rem;
+  object-fit: cover;
+}
+
+.history-gallery figcaption {
+  padding: 0.55rem 0.65rem;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
 @media print {
   .site-header,
   .site-footer,

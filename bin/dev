@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+bundle check >/dev/null 2>&1 || bundle install
+exec bundle exec jekyll serve --livereload --host 127.0.0.1 --port 4000

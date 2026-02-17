@@ -51,4 +51,10 @@ description: Phalanx is a tactical head-to-head card duel you can play with stan
   </article>
 </section>
 
+<section class="card">
+  <h2>From Notebook to Modern Rules</h2>
+  <p>Phalanx started as physical notebook-driven design work in 2022 and has evolved into a modern rules-engine and multiplayer implementation.</p>
+  <p><a href="{{ '/history/' | relative_url }}">Read the evolution timeline and explore archived artifacts.</a></p>
+</section>
+
 <p class="small-note">Rules are evolving. This website is an introductory guide; canonical draft rules live in the main Phalanx repository.</p>

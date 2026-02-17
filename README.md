@@ -5,10 +5,16 @@ This directory is the `gh-pages` worktree for the Phalanx website.
 ## Local Preview
 
 1. `cd /Users/mike/github.com/just3ws/phalanx-site`
-2. `bundle exec jekyll serve`
+2. `bin/dev`
 3. Open `http://127.0.0.1:4000/phalanx/`
 
-If Jekyll is not installed yet, install it with Bundler in your Ruby environment first, then run the same command.
+`bin/dev` will install gems via Bundler if needed, then run Jekyll with livereload.
+
+Manual commands:
+
+1. `bundle install`
+2. `bundle exec jekyll build`
+3. `bundle exec jekyll serve --livereload --host 127.0.0.1 --port 4000`
 
 ## GitHub Pages Configuration
 
@@ -26,6 +32,7 @@ The site uses `_layouts`, `_includes`, Markdown content pages, and `assets/` for
   - `rules.md`
   - `suits-strategy.md`
   - `faq.md`
+  - `history.md`
   - `roadmap.md`
   - `quick-reference.md`
 - Shared UI:
@@ -40,6 +47,7 @@ The site uses `_layouts`, `_includes`, Markdown content pages, and `assets/` for
   - `robots.txt`
   - `assets/img/favicon.svg`
   - `assets/img/og-image.svg`
+  - `assets/history/README.md` (historical archive policy + provenance)
 
 ## Runtime Tool Versions
 
@@ -47,3 +55,11 @@ Managed via `.tool-versions`:
 
 - Ruby `3.4.8`
 - Node.js `25.6.1`
+
+## Historical Assets Policy
+
+Historical artifacts from related Phalanx repositories are stored under `assets/history/`.
+
+- They are for narrative and archival context only.
+- They are not canonical gameplay references.
+- Canonical rules remain in the primary repo (`docs/RULES.md`).
