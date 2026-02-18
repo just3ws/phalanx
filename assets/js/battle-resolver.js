@@ -54,7 +54,7 @@
       const before = overflow;
       overflow += overflow;
       log.push("Club attacker bonus triggers: overflow to back doubled.");
-      addStep(progression, "Club Overflow Bonus", before, overflow, "Overflow doubled before back");
+      addStep(progression, "Club Overflow Bonus", before, overflow, "Overflow doubled before defender shield in Legacy mode");
     }
 
     if (front && front.suit === "D" && overflow > 0) {
@@ -126,18 +126,18 @@
       addStep(progression, "No Front Defender", overflow, overflow, "Unblocked overflow");
     }
 
-    if (attacker.suit === "C" && overflow > 0 && back) {
-      const before = overflow;
-      overflow += overflow;
-      log.push("Club attacker bonus triggers: overflow to back doubled.");
-      addStep(progression, "Club Overflow Bonus", before, overflow, "Overflow doubled before back");
-    }
-
     if (front && front.suit === "D" && overflow > 0) {
       const before = overflow;
       overflow = clampToZero(overflow - front.value);
       log.push("Diamond front bonus triggers: shield absorbs " + (before - overflow) + " overflow.");
       addStep(progression, "Diamond Shield", before, overflow, "Diamond absorbs overflow");
+    }
+
+    if (attacker.suit === "C" && overflow > 0 && back) {
+      const before = overflow;
+      overflow += overflow;
+      log.push("Club attacker bonus triggers: overflow to back doubled.");
+      addStep(progression, "Club Overflow Bonus", before, overflow, "Overflow doubled after defender shield in Intro mode");
     }
 
     let backHealth = null;
@@ -200,10 +200,20 @@
       ? resolveIntro(attacker, front, back)
       : resolveLegacy(attacker, front, back);
 
+    const frontAceProtected = Boolean(
+      front &&
+      front.value === 1 &&
+      core.frontHealth <= 0 &&
+      attacker.value !== 1
+    );
+
     return Object.assign(core, {
+      specials: {
+        frontAceProtected: frontAceProtected,
+      },
       survivors: {
         attacker: true,
-        front: front ? core.frontHealth > 0 : null,
+        front: front ? (frontAceProtected ? true : core.frontHealth > 0) : null,
         back: back ? core.backHealth > 0 : null,
       },
     });

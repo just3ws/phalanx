@@ -82,3 +82,12 @@ stateDiagram-v2
     <li><strong>Resource defeat:</strong> A player cannot draw or reinforce (out of cards).</li>
   </ul>
 </section>
+
+<section class="card">
+  <h2>Ace Exception</h2>
+  <ul class="quick-list">
+    <li>A front-row Ace is not discarded by non-Ace direct attacks.</li>
+    <li>A front-row Ace is discarded when directly attacked by another front-row Ace.</li>
+    <li>Outside this discard exception, Ace value still behaves as a normal value-1 card in damage math.</li>
+  </ul>
+</section>

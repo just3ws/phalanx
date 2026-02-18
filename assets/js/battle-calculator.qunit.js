@@ -71,6 +71,30 @@
     });
   });
 
+  QUnit.module("Battle Resolver - Mode Contrast", function () {
+    QUnit.test("legacy and intro diverge on Club-vs-Diamond ordering", function (assert) {
+      const legacy = resolve("legacy_reference", card("C", 10), card("D", 1), card("S", 5));
+      const intro = resolve("intro_rules", card("C", 10), card("D", 1), card("S", 5));
+
+      assert.equal(legacy.backHealth, -12, "legacy: club doubling happens before diamond shield");
+      assert.equal(intro.backHealth, -11, "intro: diamond shield happens before club doubling");
+      assert.equal(legacy.lpDamage, 12, "legacy final LP damage");
+      assert.equal(intro.lpDamage, 11, "intro final LP damage");
+      assert.notEqual(legacy.lpDamage, intro.lpDamage, "modes produce different outcomes");
+    });
+
+    QUnit.test("progression order differs between modes", function (assert) {
+      const legacy = resolve("legacy_reference", card("C", 10), card("D", 1), card("S", 5));
+      const intro = resolve("intro_rules", card("C", 10), card("D", 1), card("S", 5));
+
+      const legacyStages = legacy.progression.map(function (s) { return s.stage; }).join(" > ");
+      const introStages = intro.progression.map(function (s) { return s.stage; }).join(" > ");
+
+      assert.true(legacyStages.indexOf("Club Overflow Bonus") < legacyStages.indexOf("Diamond Shield"), "legacy applies Club before Diamond");
+      assert.true(introStages.indexOf("Diamond Shield") < introStages.indexOf("Club Overflow Bonus"), "intro applies Diamond before Club");
+    });
+  });
+
   QUnit.module("Battle Resolver - Edge Cases", function () {
     QUnit.test("low attacker into stronger defenders yields zero LP damage", function (assert) {
       const modes = ["legacy_reference", "intro_rules"];
@@ -96,6 +120,26 @@
       const last = result.progression[result.progression.length - 1];
       assert.equal(last.stage, "Damage To Player LP", "last stage reports LP damage");
       assert.equal(last.after, result.lpDamage, "final progression matches LP damage");
+    });
+
+    QUnit.test("front Ace survives non-Ace direct attack (legacy and current)", function (assert) {
+      const legacy = resolve("legacy_reference", card("H", 6), card("D", 1), card("C", 4));
+      const current = resolve("intro_rules", card("H", 6), card("D", 1), card("C", 4));
+
+      assert.true(legacy.survivors.front, "legacy: front Ace survives");
+      assert.true(current.survivors.front, "current: front Ace survives");
+      assert.true(legacy.specials.frontAceProtected, "legacy: Ace protection flagged");
+      assert.true(current.specials.frontAceProtected, "current: Ace protection flagged");
+    });
+
+    QUnit.test("front Ace is discarded by direct Ace attack", function (assert) {
+      const legacy = resolve("legacy_reference", card("H", 1), card("D", 1), card("C", 4));
+      const current = resolve("intro_rules", card("H", 1), card("D", 1), card("C", 4));
+
+      assert.notOk(legacy.survivors.front, "legacy: front Ace discarded by Ace");
+      assert.notOk(current.survivors.front, "current: front Ace discarded by Ace");
+      assert.notOk(legacy.specials.frontAceProtected, "legacy: no Ace protection");
+      assert.notOk(current.specials.frontAceProtected, "current: no Ace protection");
     });
   });
 

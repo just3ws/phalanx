@@ -40,9 +40,10 @@
     };
   }
 
-  function cardOutcome(card, health) {
+  function cardOutcome(card, health, survives, aceProtected) {
     if (!card) return "Empty slot";
-    if (health > 0) return "Survives (" + health + " HP)";
+    if (aceProtected) return "Survives (Ace rule)";
+    if (survives) return "Survives (" + health + " HP)";
     return "Discarded";
   }
 
@@ -69,8 +70,8 @@
   }
 
   function modeLabel(mode) {
-    if (mode === "intro_rules") return "Intro Rules";
-    return "Legacy Reference";
+    if (mode === "intro_rules") return "Current Rules";
+    return "Historical Rules";
   }
 
   function renderProgression(result) {
@@ -102,8 +103,8 @@
       '<p><strong>Mode:</strong> ' + modeLabel(mode) + "</p>" +
       '<p><strong>LP Damage:</strong> ' + result.lpDamage + "</p>" +
       '<div class="result-grid">' +
-      '<div class="result-block"><h3>Front Slot</h3><p><strong>Card:</strong> ' + (front ? front.verbose : "Empty") + '</p><p><strong>Outcome:</strong> ' + cardOutcome(front, result.frontHealth) + "</p></div>" +
-      '<div class="result-block"><h3>Back Slot</h3><p><strong>Card:</strong> ' + (back ? back.verbose : "Empty") + '</p><p><strong>Outcome:</strong> ' + cardOutcome(back, result.backHealth) + "</p></div>" +
+      '<div class="result-block"><h3>Front Slot</h3><p><strong>Card:</strong> ' + (front ? front.verbose : "Empty") + '</p><p><strong>Outcome:</strong> ' + cardOutcome(front, result.frontHealth, result.survivors.front, result.specials && result.specials.frontAceProtected) + "</p></div>" +
+      '<div class="result-block"><h3>Back Slot</h3><p><strong>Card:</strong> ' + (back ? back.verbose : "Empty") + '</p><p><strong>Outcome:</strong> ' + cardOutcome(back, result.backHealth, result.survivors.back, false) + "</p></div>" +
       '<div class="result-block"><h3>Attacker</h3><p><strong>Card:</strong> ' + attacker.verbose + '</p><p><strong>Outcome:</strong> Survives (no retaliation in this model)</p></div>' +
       "</div>" +
       "<p><strong>Survivors:</strong> " + (survivors.length ? survivors.join(", ") : "None") + "</p>" +
@@ -131,7 +132,7 @@
     attackerSelect.value = "S-9";
     frontSelect.value = "D-3";
     backSelect.value = "H-2";
-    modeSelect.value = "legacy_reference";
+    modeSelect.value = "intro_rules";
 
     button.addEventListener("click", function () {
       const attacker = parseCard(attackerSelect.value);

@@ -14,8 +14,8 @@ battle_calculator: true
     <label class="field">
       <span>Rules Mode</span>
       <select id="battle-mode" aria-label="Rules mode">
-        <option value="legacy_reference">Legacy Reference</option>
-        <option value="intro_rules">Intro Rules</option>
+        <option value="intro_rules">Current Rules</option>
+        <option value="legacy_reference">Historical Rules</option>
       </select>
     </label>
 
@@ -42,17 +42,20 @@ battle_calculator: true
 
 <section class="card">
   <h2>Mode Guide</h2>
-  <p><strong>Legacy Reference</strong> means "use the legacy reference battle math that older Phalanx prototypes used."</p>
-  <ul class="quick-list">
-    <li>Best when you want compatibility with legacy examples and historical balance behavior.</li>
-    <li>The in-site test page includes legacy scenarios as pass/fail criteria.</li>
-  </ul>
-  <p><strong>Intro Rules</strong> means "use the simplified site-intro interpretation of current public rules text."</p>
-  <ul class="quick-list">
-    <li>Best when you want outcomes that align with how this site explains the game to new players.</li>
-    <li>Keeps the same suit concepts, but tuned for clearer educational behavior.</li>
-  </ul>
-  <p class="small-note"><strong>If you're unsure:</strong> use <strong>Intro Rules</strong> for teaching and <strong>Legacy Reference</strong> for historical rule checks.</p>
+  <p><strong>Current Rules</strong> reflects the current intended rules behavior on this site. <strong>Historical Rules</strong> preserves the older prototype ordering for reference/comparison.</p>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Step</th><th>Historical Rules</th><th>Current Rules</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Diamond shield vs Club bonus order</td><td>Club doubles overflow first, then Diamond absorbs.</td><td>Diamond absorbs overflow first, then Club doubles what remains.</td></tr>
+        <tr><td>Heart trigger</td><td>Heart shield triggers when no card is behind that Heart card.</td><td>Heart shield triggers when no card is behind that Heart card.</td></tr>
+        <tr><td>Spade LP bonus</td><td>Doubles final LP damage.</td><td>Doubles final LP damage.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="small-note"><strong>If you're unsure:</strong> use <strong>Current Rules</strong>. Use <strong>Historical Rules</strong> only when checking older examples.</p>
 </section>
 
 <section class="card" aria-live="polite">
@@ -70,8 +73,10 @@ battle_calculator: true
     <li><strong>Heart defender:</strong> Works like a shield when there is no card behind it (player directly behind).</li>
     <li><strong>Club attacker:</strong> Applies extra pressure to the back-row defender.</li>
     <li><strong>Spade attacker:</strong> Doubles final LP damage once overflow reaches the player.</li>
+    <li><strong>Ace defender exception:</strong> A front-row Ace is not discarded by non-Ace direct attacks; it is discarded only by a direct Ace-vs-Ace front-row attack.</li>
   </ul>
   <p><strong>Heart vs Diamond trigger:</strong> Diamond triggers when a card is behind it. Heart triggers when no card is behind it.</p>
-  <p><strong>Example:</strong> 7C into 6D creates doubled carryover (2), then Diamond shield (+6) absorbs it, so back card takes 0.</p>
+  <p><strong>Example (Historical):</strong> 10C into 1D with back 5S: overflow 9 -> Club 18 -> Diamond shields 1 -> 17 hits back.</p>
+  <p><strong>Example (Current):</strong> 10C into 1D with back 5S: overflow 9 -> Diamond shields 1 -> Club 16 -> 16 hits back.</p>
   <p class="small-note">This simulator uses the site's published suit behavior and legacy reference battle math for concrete timing/order.</p>
 </section>
