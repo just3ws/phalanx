@@ -152,8 +152,8 @@ main.container {
 
 .grid {
   display: grid;
-  gap: 1rem;
-  margin-top: 1.2rem;
+  gap: 1.5rem; /* Increased from 1rem */
+  margin-top: 2rem; /* Increased from 1.2rem */
 }
 
 .card {
@@ -161,12 +161,17 @@ main.container {
   border-radius: 0.8rem;
   background: rgba(32, 43, 56, 0.62);
   padding: 1rem;
+  box-shadow: inset 0 0 10px rgba(143, 168, 194, 0.08); /* Subtle inner shadow */
 }
 
 .card h2,
 .card h3 {
   margin-top: 0;
   font-family: "Merriweather", Georgia, serif;
+}
+
+main.container > section + section {
+  margin-top: 2rem; /* Add consistent space between major sections */
 }
 
 .small-note {
@@ -177,7 +182,7 @@ main.container {
 .two-col {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1rem;
+  gap: 1.5rem; /* Increased from 1rem */
 }
 
 @media (min-width: 48rem) {
