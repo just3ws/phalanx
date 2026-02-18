@@ -15,12 +15,13 @@ description: Current direction for Phalanx tabletop and digital development.
 </section>
 
 <section class="card">
-  <h2>In Progress</h2>
+  <h2>In Progress: Digital Alpha Testing!</h2>
   <ul class="quick-list">
-    <li>Real-time digital head-to-head battle implementation.</li>
-    <li>Rules-engine validation and test coverage growth.</li>
-    <li>Better match UX and quality-of-life improvements.</li>
+    <li>**Real-time digital head-to-head battle implementation:** We're actively testing the online version of Phalanx! <a href="https://phalanx-game.fly.dev" target="_blank" rel="noopener noreferrer">Try the Alpha now!</a></li>
+    <li>**Rules-engine validation and test coverage growth:** Your alpha play helps us validate the rules engine in a live environment.</li>
+    <li>**Better match UX and quality-of-life improvements:** We're constantly refining the digital experience based on player feedback.</li>
   </ul>
+  <p class="small-note">This digital version is in early alpha and may experience downtime or feature changes. Please report any issues on <a href="https://github.com/just3ws/phalanx/issues" target="_blank" rel="noopener noreferrer">GitHub</a> – your contributions are invaluable!</p>
 </section>
 
 <section class="card">

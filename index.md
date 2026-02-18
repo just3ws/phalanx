@@ -44,10 +44,16 @@ description: Phalanx is a tactical head-to-head card duel you can play with stan
     <h2>Built for Duel Fans</h2>
     <p>Phalanx keeps the tension of tactical card combat while staying portable enough for kitchen tables, cafes, and travel sessions.</p>
   </article>
-  <article class="card">
-    <h2>Digital Version in Development</h2>
-    <p>A real-time digital head-to-head battle game based on these rules is actively being developed.</p>
-  </article>
+</section>
+
+<section class="card" aria-labelledby="digital-alpha-title">
+  <h2 id="digital-alpha-title">Phalanx Digital: Early Access Alpha!</h2>
+  <p>Experience Phalanx in real-time, head-to-head online! Our digital adaptation brings the tactical card duels to your browser. Playable now, with both classic damage resolution and a new 'digital-forward' cumulative mode.</p>
+  <div class="cta-row">
+    <a class="button-link" href="https://phalanx-game.fly.dev" target="_blank" rel="noopener noreferrer">Play the Alpha Now!</a>
+    <a class="button-link secondary" href="https://github.com/just3ws/phalanx/issues" target="_blank" rel="noopener noreferrer">Report Issues</a>
+  </div>
+  <p class="small-note">This is an early alpha preview. The game might be down at any time, and features are subject to change. Your feedback is crucial!</p>
 </section>
 
 <section class="card">
