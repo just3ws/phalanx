@@ -48,6 +48,15 @@
     </main>
     {% include footer.html %}
     <script src="{{ '/assets/js/basicLightbox.min.js' | relative_url }}"></script>
+    {% if page.mermaid %}
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
+    <script>
+      mermaid.initialize({ startOnLoad: true, theme: 'dark', securityLevel: 'strict' });
+    </script>
+    {% endif %}
+    {% if page.battle_calculator %}
+    <script src="{{ '/assets/js/battle-calculator.js' | relative_url }}"></script>
+    {% endif %}
     <script>
       document.addEventListener('DOMContentLoaded', function() {
         document.querySelectorAll('.history-gallery figure img').forEach(function(img) {

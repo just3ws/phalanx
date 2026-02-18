@@ -193,6 +193,14 @@ main.container > section + section {
   .grid.three {
     grid-template-columns: repeat(3, 1fr);
   }
+
+  .calculator-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .result-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 .quick-list {
@@ -206,6 +214,62 @@ main.container > section + section {
 
 .table-wrap {
   overflow-x: auto;
+}
+
+.diagram {
+  border: 1px solid var(--line);
+  border-radius: 0.6rem;
+  background: rgba(16, 22, 30, 0.78);
+  padding: 0.7rem;
+  overflow-x: auto;
+}
+
+.diagram svg {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+}
+
+.calculator-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.8rem;
+}
+
+.field {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.field span {
+  font-weight: 600;
+}
+
+.field select {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid var(--line);
+  border-radius: 0.45rem;
+  background: rgba(16, 22, 30, 0.95);
+  color: var(--text);
+}
+
+.result-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.8rem;
+}
+
+.result-block {
+  border: 1px solid var(--line);
+  border-radius: 0.5rem;
+  padding: 0.7rem;
+  background: rgba(16, 22, 30, 0.78);
+}
+
+.result-block h3 {
+  margin-top: 0;
 }
 
 table {
