@@ -4,11 +4,12 @@ description: Phalanx is a tactical head-to-head card duel you can play with stan
 ---
 
 <section class="hero" aria-labelledby="hero-title">
-  <h1 id="hero-title">Phalanx: Tactical Card Duels, Anywhere</h1>
-  <p>Unleash strategic depth and tactical tension with a game you can play right now. Phalanx transforms any standard deck of cards into a gripping head-to-head battle of wits and formation warfare.</p>
+  <h1 id="hero-title">Tactical Card Duels, Anywhere</h1>
+  <p>Deploy your formation. Attack by column. Drain your opponent to zero LP. Phalanx turns a standard deck of cards into a head-to-head battle of wits — playable on a kitchen table or in any browser, right now.</p>
   <div class="cta-row">
-    <a class="button-link" href="{{ '/how-to-play/' | relative_url }}">Learn to Play in 2 Minutes</a>
-    <a class="button-link secondary" href="{{ '/rules/' | relative_url }}">Read the Rules</a>
+    <a class="button-link primary" href="https://phalanx-game.fly.dev" target="_blank" rel="noopener noreferrer">Play Online &rarr;</a>
+    <a class="button-link" href="{{ '/how-to-play/' | relative_url }}">Learn to Play</a>
+    <a class="button-link secondary" href="{{ '/rules/' | relative_url }}">Rules</a>
   </div>
 </section>
 
@@ -47,13 +48,13 @@ description: Phalanx is a tactical head-to-head card duel you can play with stan
 </section>
 
 <section class="card" aria-labelledby="digital-alpha-title">
-  <h2 id="digital-alpha-title">Phalanx Digital: Early Access Alpha!</h2>
-  <p>Experience Phalanx in real-time, head-to-head online! Our digital adaptation brings the tactical card duels to your browser. Playable now, with both classic damage resolution and a new 'digital-forward' cumulative mode.</p>
+  <h2 id="digital-alpha-title">Play Online — Digital Alpha</h2>
+  <p>Real-time 1v1 in your browser. Choose between cumulative damage mode (damage carries turn to turn) or per-turn reset (tabletop faithful). No account needed — create a match, share the code, and duel.</p>
   <div class="cta-row">
-    <a class="button-link" href="https://phalanx-game.fly.dev" target="_blank" rel="noopener noreferrer">Play the Alpha Now!</a>
-    <a class="button-link secondary" href="https://github.com/just3ws/phalanx/issues" target="_blank" rel="noopener noreferrer">Report Issues</a>
+    <a class="button-link primary" href="https://phalanx-game.fly.dev" target="_blank" rel="noopener noreferrer">Open the Game &rarr;</a>
+    <a class="button-link secondary" href="https://github.com/just3ws/phalanx/issues" target="_blank" rel="noopener noreferrer">Report an Issue</a>
   </div>
-  <p class="small-note">This is an early alpha preview. The game might be down at any time, and features are subject to change. Your feedback is crucial!</p>
+  <p class="small-note">Early alpha — the server may restart unexpectedly. Your feedback shapes what gets built next.</p>
 </section>
 
 <section class="card">
