@@ -12,6 +12,7 @@
   "type": "commonjs",
   "dependencies": {
     "@axe-core/playwright": "^4.11.1",
+    "basiclightbox": "^5.0.4",
     "playwright": "^1.58.2"
   }
 }

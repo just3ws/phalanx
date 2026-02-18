@@ -47,5 +47,16 @@
       {{ content }}
     </main>
     {% include footer.html %}
+    <script src="{{ '/assets/js/basicLightbox.min.js' | relative_url }}"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('.history-gallery figure img').forEach(function(img) {
+          img.style.cursor = 'pointer'; // Indicate it's clickable
+          img.addEventListener('click', function() {
+            basicLightbox.create('<img src="' + img.src + '" alt="' + img.alt + '">').show();
+          });
+        });
+      });
+    </script>
   </body>
 </html>
