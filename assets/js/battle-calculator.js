@@ -73,6 +73,17 @@
     return "Legacy Reference";
   }
 
+  function renderProgression(result) {
+    const steps = Array.isArray(result.progression) ? result.progression : [];
+    if (!steps.length) return "<p class=\"small-note\">No progression data available.</p>";
+
+    const rows = steps.map(function (step) {
+      return "<tr><td>" + step.stage + "</td><td>" + step.before + "</td><td>" + step.after + "</td><td>" + (step.note || "") + "</td></tr>";
+    }).join("");
+
+    return '<div class="table-wrap"><table><thead><tr><th>Stage</th><th>Damage Before</th><th>Damage After</th><th>Note</th></tr></thead><tbody>' + rows + "</tbody></table></div>";
+  }
+
   function renderResult(root, attacker, front, back, mode, result) {
     const discarded = [];
     if (front && result.survivors.front === false) discarded.push(front.label);
@@ -97,6 +108,8 @@
       "</div>" +
       "<p><strong>Survivors:</strong> " + (survivors.length ? survivors.join(", ") : "None") + "</p>" +
       "<p><strong>Discarded:</strong> " + (discarded.length ? discarded.join(", ") : "None") + "</p>" +
+      "<h3>Damage Progression</h3>" +
+      renderProgression(result) +
       "<h3>Resolution Trace</h3>" +
       '<ol class="quick-list">' + logItems + "</ol>";
   }

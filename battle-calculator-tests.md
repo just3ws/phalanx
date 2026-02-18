@@ -9,6 +9,11 @@ qunit: true
 <section class="card">
   <h2>Test Runner</h2>
   <p>This page runs unit tests against the same pure battle resolver used by the calculator.</p>
+  <ul class="quick-list">
+    <li><strong>Common scenarios:</strong> expected battle flows and known suit interactions.</li>
+    <li><strong>Edge cases:</strong> low/high damage bounds, empty slots, and clamp behavior.</li>
+    <li><strong>Permutations:</strong> mode, suit, and defender-slot combinations.</li>
+  </ul>
   <p><a href="{{ '/battle-calculator/' | relative_url }}">Back to Battle Calculator</a></p>
 </section>
 
