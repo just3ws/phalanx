@@ -11,6 +11,14 @@ battle_calculator: true
   <p>Select an attacker and the defending front/back cards, then run the battle simulation.</p>
   <div class="calculator-grid">
     <label class="field">
+      <span>Rules Mode</span>
+      <select id="battle-mode" aria-label="Rules mode">
+        <option value="legacy_reference">Legacy Reference</option>
+        <option value="intro_rules">Intro Rules</option>
+      </select>
+    </label>
+
+    <label class="field">
       <span>Attacker Card</span>
       <select id="attacker-card" aria-label="Attacker card"></select>
     </label>
@@ -28,6 +36,7 @@ battle_calculator: true
   <p>
     <button id="simulate-battle" type="button" class="button-link">Simulate Battle</button>
   </p>
+  <p><a href="{{ '/battle-calculator-tests/' | relative_url }}">Open calculator unit tests</a></p>
 </section>
 
 <section class="card" aria-live="polite">
@@ -40,10 +49,11 @@ battle_calculator: true
 <section class="card">
   <h2>Suit Rules Used By This Calculator</h2>
   <ul class="quick-list">
-    <li><strong>Diamond defender:</strong> Front defense is amplified when back row is occupied.</li>
+    <li><strong>Diamond defender:</strong> If front breaks, Diamond grants a shield equal to its value to absorb overflow before back-row damage.</li>
     <li><strong>Heart defender:</strong> Reduces overflow pressure into LP paths.</li>
     <li><strong>Club attacker:</strong> Applies extra pressure to the back-row defender.</li>
     <li><strong>Spade attacker:</strong> Doubles final LP damage once overflow reaches the player.</li>
   </ul>
+  <p><strong>Example:</strong> 7C into 6D creates doubled carryover (2), then Diamond shield (+6) absorbs it, so back card takes 0.</p>
   <p class="small-note">This simulator uses the site's published suit behavior and legacy reference battle math for concrete timing/order.</p>
 </section>

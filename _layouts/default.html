@@ -39,6 +39,9 @@
     </script>
     <link rel="icon" type="image/svg+xml" href="{{ '/assets/img/favicon.svg' | relative_url }}">
     <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}">
+    {% if page.qunit %}
+    <link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.24.1.css">
+    {% endif %}
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -54,8 +57,15 @@
       mermaid.initialize({ startOnLoad: true, theme: 'dark', securityLevel: 'strict' });
     </script>
     {% endif %}
+    {% if page.battle_calculator or page.qunit %}
+    <script src="{{ '/assets/js/battle-resolver.js' | relative_url }}"></script>
+    {% endif %}
     {% if page.battle_calculator %}
     <script src="{{ '/assets/js/battle-calculator.js' | relative_url }}"></script>
+    {% endif %}
+    {% if page.qunit %}
+    <script src="https://code.jquery.com/qunit/qunit-2.24.1.js"></script>
+    <script src="{{ '/assets/js/battle-calculator.qunit.js' | relative_url }}"></script>
     {% endif %}
     <script>
       document.addEventListener('DOMContentLoaded', function() {

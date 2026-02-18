@@ -66,7 +66,7 @@ stateDiagram-v2
         <tr><th>Suit</th><th>Role</th><th>Trigger Window</th><th>When It Triggers</th><th>Practical Effect</th></tr>
       </thead>
       <tbody>
-        <tr><td>Diamonds</td><td>Shield</td><td>Front-line defense context</td><td>When front-row defensive pressure is being resolved in the attacked column</td><td>Amplifies defensive resistance at the front line</td></tr>
+        <tr><td>Diamonds</td><td>Shield</td><td>Post-front-break overflow context</td><td>When front Diamond is broken and overflow would continue to back row</td><td>Adds shield equal to Diamond value to absorb overflow before back-row damage</td></tr>
         <tr><td>Hearts</td><td>Shield</td><td>Overflow to LP context</td><td>When overflow pressure would continue from cards into player LP</td><td>Reduces overflow pressure into LP</td></tr>
         <tr><td>Clubs</td><td>Weapon</td><td>Overflow to back-row context</td><td>When damage overflows from front card into back card</td><td>Increases pressure on back-row defense</td></tr>
         <tr><td>Spades</td><td>Weapon</td><td>Direct LP context</td><td>When damage reaches the player LP step</td><td>Increases direct LP threat</td></tr>

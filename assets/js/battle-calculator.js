@@ -40,80 +40,6 @@
     };
   }
 
-  function clampToZero(num) {
-    return num < 0 ? 0 : num;
-  }
-
-  function simulateBattle(attacker, front, back) {
-    let damage = attacker.value;
-    const log = [];
-
-    log.push("Base attack damage: " + attacker.value + ".");
-
-    let frontHealth = null;
-    if (front) {
-      frontHealth = front.value - damage;
-      log.push("Front takes " + damage + " damage.");
-
-      if (front.suit === "D" && back) {
-        frontHealth += front.value;
-        log.push("Diamond front bonus triggers: +" + front.value + " front defense.");
-      }
-
-      damage -= front.value;
-      damage = clampToZero(damage);
-
-      if (front.suit === "H" && !back) {
-        damage -= front.value;
-        damage = clampToZero(damage);
-        log.push("Heart front bonus triggers (no back defender): -" + front.value + " overflow.");
-      }
-    } else {
-      log.push("No front defender: damage overflows directly.");
-    }
-
-    let backHealth = null;
-    if (back) {
-      backHealth = back.value - damage;
-      log.push("Back takes " + damage + " damage.");
-
-      if (attacker.suit === "C") {
-        backHealth -= damage;
-        log.push("Club attacker bonus triggers: back takes +" + damage + " extra.");
-      }
-
-      damage -= back.value;
-      damage = clampToZero(damage);
-
-      if (back.suit === "H") {
-        damage -= back.value;
-        damage = clampToZero(damage);
-        log.push("Heart back bonus triggers: -" + back.value + " overflow.");
-      }
-    } else {
-      log.push("No back defender: remaining damage targets LP.");
-    }
-
-    if (attacker.suit === "S" && damage > 0) {
-      damage += damage;
-      log.push("Spade attacker bonus triggers: LP damage doubled.");
-    }
-
-    const lpDamage = damage;
-
-    return {
-      lpDamage: lpDamage,
-      frontHealth: frontHealth,
-      backHealth: backHealth,
-      log: log,
-      survivors: {
-        attacker: true,
-        front: front ? frontHealth > 0 : null,
-        back: back ? backHealth > 0 : null,
-      },
-    };
-  }
-
   function cardOutcome(card, health) {
     if (!card) return "Empty slot";
     if (health > 0) return "Survives (" + health + " HP)";
@@ -142,7 +68,12 @@
     });
   }
 
-  function renderResult(root, attacker, front, back, result) {
+  function modeLabel(mode) {
+    if (mode === "intro_rules") return "Intro Rules";
+    return "Legacy Reference";
+  }
+
+  function renderResult(root, attacker, front, back, mode, result) {
     const discarded = [];
     if (front && result.survivors.front === false) discarded.push(front.label);
     if (back && result.survivors.back === false) discarded.push(back.label);
@@ -157,6 +88,7 @@
     }).join("");
 
     root.innerHTML =
+      '<p><strong>Mode:</strong> ' + modeLabel(mode) + "</p>" +
       '<p><strong>LP Damage:</strong> ' + result.lpDamage + "</p>" +
       '<div class="result-grid">' +
       '<div class="result-block"><h3>Front Slot</h3><p><strong>Card:</strong> ' + (front ? front.verbose : "Empty") + '</p><p><strong>Outcome:</strong> ' + cardOutcome(front, result.frontHealth) + "</p></div>" +
@@ -173,10 +105,11 @@
     const attackerSelect = document.getElementById("attacker-card");
     const frontSelect = document.getElementById("front-card");
     const backSelect = document.getElementById("back-card");
+    const modeSelect = document.getElementById("battle-mode");
     const button = document.getElementById("simulate-battle");
     const resultRoot = document.getElementById("battle-result");
 
-    if (!attackerSelect || !frontSelect || !backSelect || !button || !resultRoot) return;
+    if (!attackerSelect || !frontSelect || !backSelect || !modeSelect || !button || !resultRoot) return;
 
     populateCardSelect(attackerSelect, false);
     populateCardSelect(frontSelect, true);
@@ -185,19 +118,31 @@
     attackerSelect.value = "S-9";
     frontSelect.value = "D-3";
     backSelect.value = "H-2";
+    modeSelect.value = "legacy_reference";
 
     button.addEventListener("click", function () {
       const attacker = parseCard(attackerSelect.value);
       const front = parseCard(frontSelect.value);
       const back = parseCard(backSelect.value);
+      const mode = modeSelect.value;
 
       if (!attacker) {
         resultRoot.innerHTML = '<p class="small-note">Select an attacker card to run simulation.</p>';
         return;
       }
 
-      const result = simulateBattle(attacker, front, back);
-      renderResult(resultRoot, attacker, front, back, result);
+      if (!window.PhxBattle || typeof window.PhxBattle.resolveBattle !== "function") {
+        resultRoot.innerHTML = '<p class="small-note">Battle engine unavailable on this page.</p>';
+        return;
+      }
+
+      const result = window.PhxBattle.resolveBattle({
+        attacker: attacker,
+        front: front,
+        back: back,
+        mode: mode,
+      });
+      renderResult(resultRoot, attacker, front, back, mode, result);
     });
   }
 
