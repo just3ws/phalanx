@@ -1,7 +1,9 @@
 title: Phalanx
 description: A tactical head-to-head card duel you can play with standard suited decks.
-url: https://just3ws.github.io
+url: https://www.just3ws.com
 baseurl: /phalanx
+main_home_url: https://www.just3ws.com/home/
+main_about_url: https://www.just3ws.com/about/
 permalink: pretty
 markdown: kramdown
 kramdown:
