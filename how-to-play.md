@@ -1,44 +1,44 @@
 ---
 title: How to Play
-description: Quickstart setup and game loop for Phalanx.
+description: Your first game of Phalanx, from setup to victory.
 ---
 
-# How to Play Phalanx
+# Your First Game of Phalanx
 
 <section class="card">
-  <h2>What You Need</h2>
+  <h2>What to Bring</h2>
   <ul class="quick-list">
-    <li>Two players.</li>
-    <li>Ideally one standard suited deck per player.</li>
-    <li>Any standard suited deck works for learning and casual play.</li>
-    <li>Card set: Ace, numbered cards, Jack/Queen/King. Joker is optional and reserved for future expansion ideas.</li>
+    <li>A friend (Phalanx is a two-player duel).</li>
+    <li>A standard deck of cards for each of you (or share one to start).</li>
+    <li>Your wits!</li>
   </ul>
+  <p class="small-note">You'll use Aces through Kings. Jokers can sit this one out.</p>
 </section>
 
 <section class="card">
-  <h2>High-Level Setup</h2>
+  <h2>Setting the Battlefield</h2>
   <ol class="quick-list">
-    <li>Each player shuffles and draws their starting hand.</li>
-    <li>Each player deploys into a two-row formation (front row and back row) across columns.</li>
-    <li>Players alternate actions after deployment is complete.</li>
+    <li>Shuffle your deck and draw your starting hand.</li>
+    <li>Deploy your cards into a two-row formation.</li>
+    <li>Once both players have their armies ready, the first turn begins!</li>
   </ol>
 </section>
 
 <section class="card">
-  <h2>Turn Structure (Quick Loop)</h2>
+  <h2>The Rhythm of Battle</h2>
   <ol class="quick-list">
-    <li>Choose an attacking front-row card.</li>
-    <li>Attack the opposing column.</li>
-    <li>Resolve overflow: front card, then back card, then player LP.</li>
-    <li>Pass turn to opponent.</li>
-    <li>Reinforce when a column is broken.</li>
+    <li>Choose a card in your front row to lead the attack.</li>
+    <li>Declare your target: the opposing column.</li>
+    <li>Damage is resolved from front to back, with any leftover damage hitting the player.</li>
+    <li>Your opponent takes their turn.</li>
+    <li>When a column is broken, reinforce it with a card from your hand.</li>
   </ol>
 </section>
 
 <section class="formation" aria-labelledby="formation-title">
-  <h2 id="formation-title">Formation Snapshot</h2>
+  <h2 id="formation-title">Know Your Ground</h2>
   <p class="row-label">Front row (toward opponent)</p>
-  <div class="formation-grid" role="img" aria-label="Two-row, four-column formation">
+  <div class="formation-grid" role="img" aria-label="Diagram of the Phalanx game board layout, showing a two-row, four-column grid for each player.">
     <div class="slot">F1</div>
     <div class="slot">F2</div>
     <div class="slot">F3</div>

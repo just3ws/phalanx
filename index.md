@@ -5,15 +5,14 @@ description: Phalanx is a tactical head-to-head card duel you can play with stan
 
 <section class="hero" aria-labelledby="hero-title">
   <h1 id="hero-title">Phalanx: Tactical Card Duels, Anywhere</h1>
-  <p>Phalanx is a head-to-head card game built around formation combat, suit-driven tactics, and clean decisions. You can play with a standard suited deck, no specialty cards required.</p>
-  <p class="small-note">Best experience: one deck per player. Any standard suited deck works.</p>
+  <p>Unleash strategic depth and tactical tension with a game you can play right now. Phalanx transforms any standard deck of cards into a gripping head-to-head battle of wits and formation warfare.</p>
   <div class="cta-row">
-    <a class="button-link" href="{{ '/how-to-play/' | relative_url }}">Get Started in 60 Seconds</a>
-    <a class="button-link secondary" href="{{ '/rules/' | relative_url }}">Read Intro Rules</a>
+    <a class="button-link" href="{{ '/how-to-play/' | relative_url }}">Learn to Play in 2 Minutes</a>
+    <a class="button-link secondary" href="{{ '/rules/' | relative_url }}">Read the Rules</a>
   </div>
 </section>
 
-<section class="grid three" aria-label="Core pillars">
+<section class="grid three" aria-label="Core Features of Phalanx">
   <article class="card">
     <h2>Play With Standard Cards</h2>
     <p>Use Ace through King in all four suits. Jokers are optional and currently treated as a future expansion path.</p>
@@ -28,8 +27,8 @@ description: Phalanx is a tactical head-to-head card duel you can play with stan
   </article>
 </section>
 
-<section class="card" aria-labelledby="sixty-seconds">
-  <h2 id="sixty-seconds">Get Started in 60 Seconds</h2>
+<section class="card" aria-labelledby="learn-in-2-minutes">
+  <h2 id="learn-in-2-minutes">Learn in 2 Minutes</h2>
   <ol class="quick-list">
     <li>Grab one standard suited deck per player (ideal), or any standard suited deck to start.</li>
     <li>Set up each side as a two-row formation.</li>
@@ -40,7 +39,7 @@ description: Phalanx is a tactical head-to-head card duel you can play with stan
   <p><a href="{{ '/how-to-play/' | relative_url }}">Open the full quickstart.</a></p>
 </section>
 
-<section class="two-col" aria-label="Why players like it">
+<section class="two-col" aria-label="Key benefits of playing Phalanx">
   <article class="card">
     <h2>Built for Duel Fans</h2>
     <p>Phalanx keeps the tension of tactical card combat while staying portable enough for kitchen tables, cafes, and travel sessions.</p>

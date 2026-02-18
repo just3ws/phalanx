@@ -238,12 +238,13 @@ th {
   border-radius: 0.45rem;
   padding: 0.65rem 0.4rem;
   text-align: center;
-  background: rgba(143, 168, 194, 0.12);
+  background: linear-gradient(180deg, rgba(143, 168, 194, 0.18), rgba(143, 168, 194, 0.08));
   min-height: 3rem;
+  font-weight: 600;
 }
 
 .slot.back {
-  background: rgba(200, 165, 90, 0.11);
+  background: linear-gradient(180deg, rgba(200, 165, 90, 0.18), rgba(200, 165, 90, 0.08));
 }
 
 .row-label {
