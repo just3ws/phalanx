@@ -1,6 +1,6 @@
 ---
 title: Roadmap
-description: Current direction for Phalanx tabletop and digital development.
+description: High-level roadmap for current Phalanx development priorities.
 ---
 
 # Roadmap
@@ -8,28 +8,37 @@ description: Current direction for Phalanx tabletop and digital development.
 <section class="card">
   <h2>Now</h2>
   <ul class="quick-list">
-    <li>Stabilize and communicate the intro rules clearly.</li>
-    <li>Improve onboarding for first-time tabletop play.</li>
-    <li>Keep canonical rule references and terminology aligned.</li>
+    <li>Maintain a stable and playable two-player core loop.</li>
+    <li>Improve player onboarding and first-session clarity.</li>
+    <li>Keep rules, protocol, and docs aligned across surfaces.</li>
   </ul>
 </section>
 
 <section class="card">
-  <h2>In Progress: Digital Alpha Testing!</h2>
+  <h2>Next</h2>
   <ul class="quick-list">
-    <li>**Real-time digital head-to-head battle implementation:** We're actively testing the online version of Phalanx! <a href="https://phalanx-game.fly.dev" target="_blank" rel="noopener noreferrer">Try the Alpha now!</a></li>
-    <li>**Rules-engine validation and test coverage growth:** Your alpha play helps us validate the rules engine in a live environment.</li>
-    <li>**Better match UX and quality-of-life improvements:** We're constantly refining the digital experience based on player feedback.</li>
+    <li>Complete reconnect behavior hardening for smoother session continuity.</li>
+    <li>Continue reliability and quality-of-life improvements for digital play.</li>
+    <li>Expand structured playtest and feedback loops.</li>
   </ul>
-  <p class="small-note">This digital version is in early alpha and may experience downtime or feature changes. Please report any issues on <a href="https://github.com/just3ws/phalanx/issues" target="_blank" rel="noopener noreferrer">GitHub</a> – your contributions are invaluable!</p>
 </section>
 
 <section class="card">
-  <h2>Coming Soon</h2>
+  <h2>Later</h2>
   <ul class="quick-list">
-    <li>Optional expansion exploration, including Joker concepts.</li>
-    <li>Polished digital player experience and broader playtesting.</li>
+    <li>Additional UX polish and presentation quality improvements.</li>
+    <li>Optional expansion explorations (including Joker concepts).</li>
+    <li>Broader community growth based on playtest outcomes.</li>
   </ul>
 </section>
 
-<p class="small-note">Roadmap ordering can change as rules and implementation mature.</p>
+<section class="card">
+  <h2>How This Connects to Delivery</h2>
+  <ul class="quick-list">
+    <li><a href="{{ '/status/' | relative_url }}">Current status and limitations</a></li>
+    <li><a href="https://github.com/just3ws/phalanx/blob/main/docs/TASKS.md" target="_blank" rel="noopener noreferrer">Detailed engineering backlog</a></li>
+    <li><a href="{{ '/get-involved/' | relative_url }}">Ways to get involved</a></li>
+  </ul>
+</section>
+
+<p class="small-note">Roadmap order can change as reliability work and gameplay findings evolve.</p>

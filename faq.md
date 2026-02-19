@@ -1,6 +1,6 @@
 ---
 title: FAQ
-description: Frequently asked questions about decks, players, duration, and expansion plans.
+description: Frequently asked questions about decks, players, phase status, and where to report feedback.
 ---
 
 # FAQ
@@ -17,7 +17,7 @@ description: Frequently asked questions about decks, players, duration, and expa
 
 <details>
   <summary>Are Jokers required?</summary>
-  <p>No. Jokers are excluded from v1 rules. Optional Joker expansion concepts are planned for later.</p>
+  <p>No. Jokers are excluded from v1 rules. Optional Joker expansion concepts are deferred for later exploration.</p>
 </details>
 
 <details>
@@ -26,16 +26,26 @@ description: Frequently asked questions about decks, players, duration, and expa
 </details>
 
 <details>
-  <summary>How long does a match take?</summary>
-  <p>Game length depends on pace and familiarity. Most sessions become faster after players learn formation and overflow rhythm.</p>
-</details>
-
-<details>
   <summary>Is there a digital version?</summary>
-  <p>Yes. A real-time digital head-to-head battle game based on these rules is in development.</p>
+  <p>Yes. You can play the current alpha at <a href="https://phalanx-game.fly.dev" target="_blank" rel="noopener noreferrer">phalanx-game.fly.dev</a>.</p>
 </details>
 
 <details>
-  <summary>Where are the authoritative rules?</summary>
-  <p>The canonical draft is in the primary repository under <code>docs/RULES.md</code>. This site is an introductory guide.</p>
+  <summary>What phase is the project in?</summary>
+  <p>Pre-alpha active development. The game is playable, but reliability and UX are still being hardened.</p>
+</details>
+
+<details>
+  <summary>Known limitation to be aware of?</summary>
+  <p>Reconnect behavior is still being completed. See <a href="{{ '/status/' | relative_url }}">Status</a> for current details.</p>
+</details>
+
+<details>
+  <summary>Where are the authoritative rules and technical contracts?</summary>
+  <p>Canonical docs live in the main repo: <a href="https://github.com/just3ws/phalanx/blob/main/docs/RULES.md" target="_blank" rel="noopener noreferrer">RULES.md</a>, <a href="https://github.com/just3ws/phalanx/blob/main/docs/PROTOCOL.md" target="_blank" rel="noopener noreferrer">PROTOCOL.md</a>, and <a href="https://github.com/just3ws/phalanx/blob/main/docs/CLIENT_CONTRACT.md" target="_blank" rel="noopener noreferrer">CLIENT_CONTRACT.md</a>.</p>
+</details>
+
+<details>
+  <summary>How can I help?</summary>
+  <p>See <a href="{{ '/get-involved/' | relative_url }}">Get Involved</a> and <a href="{{ '/support/' | relative_url }}">Support</a>.</p>
 </details>
