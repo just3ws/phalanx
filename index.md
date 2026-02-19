@@ -50,11 +50,19 @@ description: Phalanx is a tactical head-to-head card duel you can play with stan
   <p><a href="{{ '/how-to-play/' | relative_url }}">Open the full quickstart.</a></p>
 </section>
 
+
+<section class="card" aria-labelledby="about-phalanx-title">
+  <h2 id="about-phalanx-title">What Is Phalanx?</h2>
+  <p>Read the design direction, intended audience, and development philosophy behind the project.</p>
+  <p><a href="{{ '/about-phalanx/' | relative_url }}">About Phalanx</a></p>
+</section>
+
 <section class="card" aria-labelledby="how-to-help-title">
   <h2 id="how-to-help-title">How to Help</h2>
   <div class="cta-row">
     <a class="button-link" href="{{ '/get-involved/' | relative_url }}">Get Involved</a>
     <a class="button-link secondary" href="{{ '/support/' | relative_url }}">Support Phalanx</a>
+    <a class="button-link" href="{{ '/build-with-phalanx/' | relative_url }}">Build With Phalanx</a>
   </div>
 </section>
 
