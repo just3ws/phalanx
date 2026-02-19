@@ -5,12 +5,22 @@ description: Phalanx is a tactical head-to-head card duel you can play with stan
 
 <section class="hero" aria-labelledby="hero-title">
   <h1 id="hero-title">Tactical Card Duels, Anywhere</h1>
-  <p>Deploy your formation. Attack by column. Drain your opponent to zero LP. Phalanx turns a standard deck of cards into a head-to-head battle of wits — playable on a kitchen table or in any browser, right now.</p>
+  <p>Deploy your formation. Attack by column. Drain your opponent to zero LP. Phalanx turns a standard deck of cards into a head-to-head battle of wits — playable on a kitchen table or in any browser.</p>
   <div class="cta-row">
     <a class="button-link primary" href="https://phalanx-game.fly.dev" target="_blank" rel="noopener noreferrer">Play Online &rarr;</a>
     <a class="button-link" href="{{ '/how-to-play/' | relative_url }}">Learn to Play</a>
     <a class="button-link secondary" href="{{ '/rules/' | relative_url }}">Rules</a>
   </div>
+</section>
+
+<section class="card" aria-labelledby="status-at-a-glance">
+  <h2 id="status-at-a-glance">Status at a Glance</h2>
+  <ul class="quick-list">
+    <li><strong>Phase:</strong> pre-alpha active development</li>
+    <li><strong>Playable:</strong> yes, real-time two-player browser matches</li>
+    <li><strong>Known limitation:</strong> reconnect behavior is still being hardened</li>
+  </ul>
+  <p><a href="{{ '/status/' | relative_url }}">Read full status and known limitations.</a></p>
 </section>
 
 <section class="grid three" aria-label="Core Features of Phalanx">
@@ -40,11 +50,12 @@ description: Phalanx is a tactical head-to-head card duel you can play with stan
   <p><a href="{{ '/how-to-play/' | relative_url }}">Open the full quickstart.</a></p>
 </section>
 
-<section class="two-col" aria-label="Key benefits of playing Phalanx">
-  <article class="card">
-    <h2>Built for Duel Fans</h2>
-    <p>Phalanx keeps the tension of tactical card combat while staying portable enough for kitchen tables, cafes, and travel sessions.</p>
-  </article>
+<section class="card" aria-labelledby="how-to-help-title">
+  <h2 id="how-to-help-title">How to Help</h2>
+  <div class="cta-row">
+    <a class="button-link" href="{{ '/get-involved/' | relative_url }}">Get Involved</a>
+    <a class="button-link secondary" href="{{ '/support/' | relative_url }}">Support Phalanx</a>
+  </div>
 </section>
 
 <section class="card" aria-labelledby="digital-alpha-title">
@@ -63,4 +74,4 @@ description: Phalanx is a tactical head-to-head card duel you can play with stan
   <p><a href="{{ '/history/' | relative_url }}">Read the evolution timeline and explore archived artifacts.</a></p>
 </section>
 
-<p class="small-note">Rules are evolving. This website is an introductory guide; canonical draft rules live in the main Phalanx repository.</p>
+<p class="small-note">This website is an introductory guide. Canonical rules, protocol, and implementation docs live in the main Phalanx repository.</p>
