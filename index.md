@@ -1,85 +1,79 @@
 ---
-title: Home
-description: Phalanx is a tactical head-to-head card duel you can play with standard suited decks.
+title: Tactical 1v1 Card Combat
+description: Phalanx is a high-stakes, strategy-first 1v1 card duel. Deploy your formation, attack by column, and outmaneuver your opponent.
 ---
 
 <section class="hero" aria-labelledby="hero-title">
-  <h1 id="hero-title">Tactical Card Duels, Anywhere</h1>
+  <h1 id="hero-title">Tactical Card Duels. Strategy Over Luck.</h1>
   <p>Deploy your formation. Attack by column. Drain your opponent to zero LP. Phalanx turns a standard deck of cards into a head-to-head battle of wits — playable on a kitchen table or in any browser.</p>
   <div class="cta-row">
     <a class="button-link primary" href="https://phalanx-game.fly.dev" target="_blank" rel="noopener noreferrer">Play Online &rarr;</a>
     <a class="button-link" href="{{ '/how-to-play/' | relative_url }}">Learn to Play</a>
-    <a class="button-link secondary" href="{{ '/rules/' | relative_url }}">Rules</a>
+    <a class="button-link secondary" href="{{ '/rules/' | relative_url }}">Full Rules</a>
   </div>
 </section>
 
 <section class="card" aria-labelledby="status-at-a-glance">
-  <h2 id="status-at-a-glance">Status at a Glance</h2>
+  <h2 id="status-at-a-glance">Mission Status</h2>
   <ul class="quick-list">
-    <li><strong>Phase:</strong> pre-alpha active development</li>
-    <li><strong>Playable:</strong> yes, real-time two-player browser matches</li>
-    <li><strong>Known limitation:</strong> reconnect behavior is still being hardened</li>
+    <li><strong>Phase:</strong> Digital Alpha Active</li>
+    <li><strong>Playable:</strong> Yes, real-time matches & spectator mode</li>
+    <li><strong>Platform:</strong> Browser (Mobile + Desktop) / Tabletop (Physical)</li>
   </ul>
   <p><a href="{{ '/status/' | relative_url }}">Read full status and known limitations.</a></p>
 </section>
 
 <section class="grid three" aria-label="Core Features of Phalanx">
   <article class="card">
-    <h2>Play With Standard Cards</h2>
-    <p>Use Ace through King in all four suits. Jokers are optional and currently treated as a future expansion path.</p>
+    <h2>Standard Deck, Modern Rules</h2>
+    <p>Use any standard suited deck (Ace through King). Phalanx brings deep tactical gameplay to the most accessible medium in the world.</p>
   </article>
   <article class="card">
     <h2>Formation-Based Combat</h2>
-    <p>Build two rows of squads, attack by column, and manage how damage overflows from front line to back line to player LP.</p>
+    <p>Build your squads in two rows. Manage how damage overflows from your front line to your back line and finally to your LP.</p>
   </article>
   <article class="card">
-    <h2>Suit Identity Matters</h2>
-    <p><strong>Hearts + Diamonds</strong> function as Shields. <strong>Spades + Clubs</strong> function as Weapons.</p>
+    <h2>Suit Identity & Powers</h2>
+    <p><strong>Diamonds & Hearts</strong> raise Shields on death. <strong>Spades & Clubs</strong> deliver devastating Weapons and overflow bonuses.</p>
   </article>
 </section>
 
 <section class="card" aria-labelledby="learn-in-2-minutes">
-  <h2 id="learn-in-2-minutes">Learn in 2 Minutes</h2>
+  <h2 id="learn-in-2-minutes">Tactical Quickstart</h2>
   <ol class="quick-list">
-    <li>Grab one standard suited deck per player (ideal), or any standard suited deck to start.</li>
-    <li>Set up each side as a two-row formation.</li>
-    <li>Take turns attacking by column with front-row cards.</li>
-    <li>Track overflow from front card to back card to player LP.</li>
-    <li>Use suit strengths: Shields (Hearts, Diamonds), Weapons (Spades, Clubs).</li>
+    <li><strong>Prepare:</strong> One standard deck per player (recommended) or one shared deck.</li>
+    <li><strong>Deploy:</strong> Set up 8 cards in a 4x2 formation (Front and Back rows).</li>
+    <li><strong>Attack:</strong> Take turns attacking with your Front-row cards by column.</li>
+    <li><strong>Overflow:</strong> Damage cascades through the column before hitting Player LP.</li>
+    <li><strong>Win:</strong> Reduce your opponent to 0 LP or destroy their entire formation.</li>
   </ol>
-  <p><a href="{{ '/how-to-play/' | relative_url }}">Open the full quickstart.</a></p>
+  <p><a href="{{ '/how-to-play/' | relative_url }}">Read the complete field guide.</a></p>
 </section>
 
-
-<section class="card" aria-labelledby="about-phalanx-title">
-  <h2 id="about-phalanx-title">What Is Phalanx?</h2>
-  <p>Read the design direction, intended audience, and development philosophy behind the project.</p>
-  <p><a href="{{ '/about-phalanx/' | relative_url }}">About Phalanx</a></p>
-</section>
-
-<section class="card" aria-labelledby="how-to-help-title">
-  <h2 id="how-to-help-title">How to Help</h2>
-  <div class="cta-row">
-    <a class="button-link" href="{{ '/get-involved/' | relative_url }}">Get Involved</a>
-    <a class="button-link secondary" href="{{ '/support/' | relative_url }}">Support Phalanx</a>
-    <a class="button-link" href="{{ '/build-with-phalanx/' | relative_url }}">Build With Phalanx</a>
-  </div>
+<section class="two-col">
+  <article class="card">
+    <h2>Design Philosophy</h2>
+    <p>Read the direction, intended audience, and development philosophy behind Phalanx.</p>
+    <a class="button-link" href="{{ '/about-phalanx/' | relative_url }}">About Phalanx</a>
+  </article>
+  <article class="card">
+    <h2>Join the Phalanx</h2>
+    <p>Get involved in development, report bugs, or support the project directly.</p>
+    <div class="cta-row">
+      <a class="button-link" href="{{ '/get-involved/' | relative_url }}">Get Involved</a>
+      <a class="button-link secondary" href="{{ '/support/' | relative_url }}">Support</a>
+    </div>
+  </article>
 </section>
 
 <section class="card" aria-labelledby="digital-alpha-title">
-  <h2 id="digital-alpha-title">Play Online — Digital Alpha</h2>
-  <p>Real-time 1v1 in your browser. Choose between cumulative damage mode (damage carries turn to turn) or per-turn reset (tabletop faithful). No account needed — create a match, share the code, and duel.</p>
+  <h2 id="digital-alpha-title">Deploy Online — Digital Alpha</h2>
+  <p>Real-time 1v1 in your browser. Features <strong>Cumulative Damage</strong> (digital-first) or <strong>Per-Turn Reset</strong> (tabletop faithful). No account required.</p>
   <div class="cta-row">
-    <a class="button-link primary" href="https://phalanx-game.fly.dev" target="_blank" rel="noopener noreferrer">Open the Game &rarr;</a>
-    <a class="button-link secondary" href="https://github.com/just3ws/phalanx/issues" target="_blank" rel="noopener noreferrer">Report an Issue</a>
+    <a class="button-link primary" href="https://phalanx-game.fly.dev" target="_blank" rel="noopener noreferrer">Deploy to Battle &rarr;</a>
+    <a class="button-link secondary" href="https://github.com/just3ws/phalanx/issues" target="_blank" rel="noopener noreferrer">Report Bug</a>
   </div>
-  <p class="small-note">Early alpha — the server may restart unexpectedly. Your feedback shapes what gets built next.</p>
+  <p class="small-note">Early Alpha: The server may redeploy during active development. Your feedback directly shapes the engine.</p>
 </section>
 
-<section class="card">
-  <h2>From Notebook to Modern Rules</h2>
-  <p>Phalanx started as physical notebook-driven design work in 2022 and has evolved into a modern rules-engine and multiplayer implementation.</p>
-  <p><a href="{{ '/history/' | relative_url }}">Read the evolution timeline and explore archived artifacts.</a></p>
-</section>
-
-<p class="small-note">This website is an introductory guide. Canonical rules, protocol, and implementation docs live in the main Phalanx repository.</p>
+<p class="small-note">This site is a tactical reference. Canonical protocol, engine tests, and server source code live in the main repository.</p>

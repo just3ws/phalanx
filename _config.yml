@@ -1,9 +1,7 @@
-title: Phalanx
-description: A tactical head-to-head card duel you can play with standard suited decks.
+title: Phalanx | Tactical 1v1 Card Combat
+description: A high-stakes, strategy-first 1v1 card duel. Deploy your forces, manage your lifeline, and outmaneuver your opponent with standard suited decks.
 url: https://www.just3ws.com
 baseurl: /phalanx
-main_home_url: https://www.just3ws.com/home/
-main_about_url: https://www.just3ws.com/about/
 permalink: pretty
 markdown: kramdown
 kramdown:
