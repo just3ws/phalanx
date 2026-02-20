@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Battle Calculator Tests | Phalanx</title>
+    <meta name="description" content="In-browser unit test criteria and pass/fail results for the battle calculator.">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Battle Calculator Tests | Phalanx">
+    <meta property="og:description" content="In-browser unit test criteria and pass/fail results for the battle calculator.">
+    <meta property="og:url" content="http://localhost:4001/phalanx/battle-calculator-tests/">
+    <meta property="og:image" content="http://localhost:4001/phalanx/assets/img/og-image.svg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Battle Calculator Tests | Phalanx">
+    <meta name="twitter:description" content="In-browser unit test criteria and pass/fail results for the battle calculator.">
+    <meta name="twitter:image" content="http://localhost:4001/phalanx/assets/img/og-image.svg">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Phalanx",
+      "url": "http://localhost:4001/phalanx/",
+      "description": "A tactical head-to-head card duel you can play with standard suited decks.",
+      "about": {
+        "@type": "VideoGame",
+        "name": "Phalanx",
+        "url": "http://localhost:4001/phalanx/",
+        "description": "A tactical head-to-head card duel you can play with standard suited decks.",
+        "genre": "Card Game",
+        "numberOfPlayers": {
+          "@type": "QuantitativeValue",
+          "minValue": 2,
+          "maxValue": 2
+        },
+        "gamePlatform": "Tabletop",
+        "playMode": "MultiPlayer"
+      }
+    }
+    </script>
+    <link rel="icon" type="image/svg+xml" href="/phalanx/assets/img/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/phalanx/assets/css/site.css">
+    <script data-goatcounter="https://just3ws.goatcounter.com/count"
+            async src="https://gc.zgo.at/count.js"></script>
+    <script src="/phalanx/assets/js/goatcounter-events.js" defer></script>
+    
+    <link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.24.1.css">
+    
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="/phalanx/">Phalanx</a>
+    <nav aria-label="Primary">
+      <ul class="nav-list">
+        <li><a href="/phalanx/how-to-play/">How to Play</a></li>
+        <li><a href="/phalanx/rules/">Rules</a></li>
+        <li><a href="/phalanx/about-phalanx/">About</a></li>
+        <li><a href="/phalanx/status/">Status</a></li>
+        <li><a href="/phalanx/roadmap/">Roadmap</a></li>
+        <li><a href="/phalanx/get-involved/">Get Involved</a></li>
+        <li><a href="/phalanx/support/">Support</a></li>
+        <li><a href="/phalanx/faq/">FAQ</a></li>
+        <li><a href="/phalanx/history/">History</a></li>
+        <li><a class="nav-play" href="https://phalanx-game.fly.dev" target="_blank" rel="noopener noreferrer">Play &rarr;</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+    <main id="main" class="container">
+      <h1 id="battle-calculator-unit-tests">Battle Calculator Unit Tests</h1>
+
+<section class="card">
+  <h2>Test Runner</h2>
+  <p>This page runs unit tests against the same pure battle resolver used by the calculator.</p>
+  <ul class="quick-list">
+    <li><strong>Common scenarios:</strong> expected battle flows and known suit interactions.</li>
+    <li><strong>Edge cases:</strong> low/high damage bounds, empty slots, and clamp behavior.</li>
+    <li><strong>Mode contrast checks:</strong> explicit pass/fail assertions that Historical Rules and Current Rules produce different outputs in targeted cases.</li>
+    <li><strong>Permutations:</strong> mode, suit, and defender-slot combinations.</li>
+  </ul>
+  <p><a href="/phalanx/battle-calculator/">Back to Battle Calculator</a></p>
+</section>
+
+<div id="qunit"></div>
+<div id="qunit-fixture"></div>
+
+    </main>
+    <footer class="site-footer">
+  <div class="container footer-inner">
+    <p>Phalanx is a tactical two-player card duel playable with standard suited playing cards.</p>
+    <p>
+      <a href="/phalanx/status/">Status</a>
+      <span aria-hidden="true">|</span>
+      <a href="/phalanx/get-involved/">Get Involved</a>
+      <span aria-hidden="true">|</span>
+      <a href="/phalanx/support/">Support</a>
+      <span aria-hidden="true">|</span>
+      <a href="/phalanx/quick-reference/">Printable Quick Reference</a>
+      <span aria-hidden="true">|</span>
+      <a href="/phalanx/sitemap.xml">Sitemap</a>
+    </p>
+    <p class="small-note">Rules are evolving. Canonical draft rules and implementation contracts live in the main Phalanx repository.</p>
+  </div>
+</footer>
+
+    <script src="/phalanx/assets/js/basicLightbox.min.js"></script>
+    
+    
+    <script src="/phalanx/assets/js/battle-resolver.js"></script>
+    
+    
+    
+    <script src="https://code.jquery.com/qunit/qunit-2.24.1.js"></script>
+    <script src="/phalanx/assets/js/battle-calculator.qunit.js"></script>
+    
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('.history-gallery figure img').forEach(function(img) {
+          img.style.cursor = 'pointer'; // Indicate it's clickable
+          img.addEventListener('click', function() {
+            basicLightbox.create('<img src="' + img.src + '" alt="' + img.alt + '">').show();
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

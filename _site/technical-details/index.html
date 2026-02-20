@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Technical Details | Phalanx</title>
+    <meta name="description" content="Game loop diagrams, state model, and suit trigger timing for Phalanx.">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Technical Details | Phalanx">
+    <meta property="og:description" content="Game loop diagrams, state model, and suit trigger timing for Phalanx.">
+    <meta property="og:url" content="http://localhost:4001/phalanx/technical-details/">
+    <meta property="og:image" content="http://localhost:4001/phalanx/assets/img/og-image.svg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Technical Details | Phalanx">
+    <meta name="twitter:description" content="Game loop diagrams, state model, and suit trigger timing for Phalanx.">
+    <meta name="twitter:image" content="http://localhost:4001/phalanx/assets/img/og-image.svg">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Phalanx",
+      "url": "http://localhost:4001/phalanx/",
+      "description": "A tactical head-to-head card duel you can play with standard suited decks.",
+      "about": {
+        "@type": "VideoGame",
+        "name": "Phalanx",
+        "url": "http://localhost:4001/phalanx/",
+        "description": "A tactical head-to-head card duel you can play with standard suited decks.",
+        "genre": "Card Game",
+        "numberOfPlayers": {
+          "@type": "QuantitativeValue",
+          "minValue": 2,
+          "maxValue": 2
+        },
+        "gamePlatform": "Tabletop",
+        "playMode": "MultiPlayer"
+      }
+    }
+    </script>
+    <link rel="icon" type="image/svg+xml" href="/phalanx/assets/img/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/phalanx/assets/css/site.css">
+    <script data-goatcounter="https://just3ws.goatcounter.com/count"
+            async src="https://gc.zgo.at/count.js"></script>
+    <script src="/phalanx/assets/js/goatcounter-events.js" defer></script>
+    
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="/phalanx/">Phalanx</a>
+    <nav aria-label="Primary">
+      <ul class="nav-list">
+        <li><a href="/phalanx/how-to-play/">How to Play</a></li>
+        <li><a href="/phalanx/rules/">Rules</a></li>
+        <li><a href="/phalanx/about-phalanx/">About</a></li>
+        <li><a href="/phalanx/status/">Status</a></li>
+        <li><a href="/phalanx/roadmap/">Roadmap</a></li>
+        <li><a href="/phalanx/get-involved/">Get Involved</a></li>
+        <li><a href="/phalanx/support/">Support</a></li>
+        <li><a href="/phalanx/faq/">FAQ</a></li>
+        <li><a href="/phalanx/history/">History</a></li>
+        <li><a class="nav-play" href="https://phalanx-game.fly.dev" target="_blank" rel="noopener noreferrer">Play &rarr;</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+    <main id="main" class="container">
+      <h1 id="technical-details">Technical Details</h1>
+
+<p class="small-note">This page documents the gameplay flow used on this site. Canonical draft rules remain in the primary repository.</p>
+
+<section class="card">
+  <h2>Turn Sequence</h2>
+  <p>One turn executes in this order: attack declaration, damage path resolution, suit effects, reinforcement, then pass.</p>
+  <div class="mermaid diagram">
+flowchart LR
+  A[Select Front-Row Attacker] --&gt; B[Choose Opposing Column]
+  B --&gt; C[Resolve Damage<br />Front -&gt; Back -&gt; LP]
+  C --&gt; D[Apply Suit Effects]
+  D --&gt; E{Column Open?}
+  E -- Yes --&gt; F[Reinforce]
+  E -- No --&gt; G[Pass Turn]
+  F --&gt; G
+  </div>
+</section>
+
+<section class="card">
+  <h2>Gameplay Loop</h2>
+  <p>The game alternates active player turns until a victory condition is met.</p>
+  <div class="mermaid diagram">
+flowchart TD
+  S[Setup<br />Shuffle, Draw, Deploy] --&gt; T[Player Turn]
+  T --&gt; V{Victory Check}
+  V -- No --&gt; O[Opponent Turn]
+  O --&gt; V
+  V -- Yes --&gt; X[Game Over]
+  </div>
+</section>
+
+<section class="card">
+  <h2>Statechart</h2>
+  <p>State-level view of turn progression and terminal conditions.</p>
+  <div class="mermaid diagram">
+stateDiagram-v2
+  [*] --&gt; Setup
+  Setup --&gt; TurnStart
+  TurnStart --&gt; SelectAttacker
+  SelectAttacker --&gt; SelectTarget
+  SelectTarget --&gt; ResolveDamage
+  ResolveDamage --&gt; ApplySuitEffects
+  ApplySuitEffects --&gt; Reinforce: open slot exists
+  ApplySuitEffects --&gt; PassTurn: no reinforcement needed
+  Reinforce --&gt; PassTurn
+  PassTurn --&gt; VictoryCheck
+  VictoryCheck --&gt; TurnStart: no winner
+  VictoryCheck --&gt; GameOver: LP &lt;= 0 OR no draw/reinforce
+  GameOver --&gt; [*]
+  </div>
+</section>
+
+<section class="card">
+  <h2>Suit Ability Timing</h2>
+  <p>Suit effects are applied in the turn step after base damage path resolution, and each suit keys off a specific damage location or board context.</p>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Suit</th><th>Role</th><th>Trigger Window</th><th>When It Triggers</th><th>Practical Effect</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Diamonds</td><td>Shield</td><td>Post-front-break overflow context</td><td>When front Diamond is broken and overflow would continue to back row</td><td>Adds shield equal to Diamond value to absorb overflow before back-row damage</td></tr>
+        <tr><td>Hearts</td><td>Shield</td><td>No-card-behind context</td><td>When there is no card behind the Heart card (only player behind)</td><td>Adds shield equal to Heart value to absorb overflow before LP</td></tr>
+        <tr><td>Clubs</td><td>Weapon</td><td>Overflow to back-row context</td><td>When damage overflows from front card into back card</td><td>Increases pressure on back-row defense</td></tr>
+        <tr><td>Spades</td><td>Weapon</td><td>Direct LP context</td><td>When damage reaches the player LP step</td><td>Increases direct LP threat</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="card">
+  <h2>Victory States</h2>
+  <ul class="quick-list">
+    <li><strong>LP defeat:</strong> A player reaches 0 Life Points.</li>
+    <li><strong>Resource defeat:</strong> A player cannot draw or reinforce (out of cards).</li>
+  </ul>
+</section>
+
+<section class="card">
+  <h2>Ace Exception</h2>
+  <ul class="quick-list">
+    <li>A front-row Ace is not discarded by non-Ace direct attacks.</li>
+    <li>A front-row Ace is discarded when directly attacked by another front-row Ace.</li>
+    <li>Outside this discard exception, Ace value still behaves as a normal value-1 card in damage math.</li>
+  </ul>
+</section>
+
+    </main>
+    <footer class="site-footer">
+  <div class="container footer-inner">
+    <p>Phalanx is a tactical two-player card duel playable with standard suited playing cards.</p>
+    <p>
+      <a href="/phalanx/status/">Status</a>
+      <span aria-hidden="true">|</span>
+      <a href="/phalanx/get-involved/">Get Involved</a>
+      <span aria-hidden="true">|</span>
+      <a href="/phalanx/support/">Support</a>
+      <span aria-hidden="true">|</span>
+      <a href="/phalanx/quick-reference/">Printable Quick Reference</a>
+      <span aria-hidden="true">|</span>
+      <a href="/phalanx/sitemap.xml">Sitemap</a>
+    </p>
+    <p class="small-note">Rules are evolving. Canonical draft rules and implementation contracts live in the main Phalanx repository.</p>
+  </div>
+</footer>
+
+    <script src="/phalanx/assets/js/basicLightbox.min.js"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
+    <script>
+      mermaid.initialize({ startOnLoad: true, theme: 'dark', securityLevel: 'strict' });
+    </script>
+    
+    
+    
+    
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('.history-gallery figure img').forEach(function(img) {
+          img.style.cursor = 'pointer'; // Indicate it's clickable
+          img.addEventListener('click', function() {
+            basicLightbox.create('<img src="' + img.src + '" alt="' + img.alt + '">').show();
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

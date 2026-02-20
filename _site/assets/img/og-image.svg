@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="Phalanx social preview">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f151c"/>
+      <stop offset="100%" stop-color="#18232f"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect x="80" y="90" width="1040" height="450" rx="24" fill="#202b38" stroke="#c8a55a" stroke-width="4"/>
+  <text x="130" y="250" fill="#e9edf3" font-family="Georgia, serif" font-size="98" font-weight="700">PHALANX</text>
+  <text x="130" y="328" fill="#b4bfcc" font-family="Segoe UI, sans-serif" font-size="40">Tactical card duels with standard suited decks.</text>
+  <text x="130" y="404" fill="#8fa8c2" font-family="Segoe UI, sans-serif" font-size="34">Hearts + Diamonds = Shields | Spades + Clubs = Weapons</text>
+</svg>

@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Rules of Engagement | Phalanx</title>
+    <meta name="description" content="The core rules for Phalanx, the tactical 1v1 card duel.">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Rules of Engagement | Phalanx">
+    <meta property="og:description" content="The core rules for Phalanx, the tactical 1v1 card duel.">
+    <meta property="og:url" content="http://localhost:4001/phalanx/rules/">
+    <meta property="og:image" content="http://localhost:4001/phalanx/assets/img/og-image.svg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Rules of Engagement | Phalanx">
+    <meta name="twitter:description" content="The core rules for Phalanx, the tactical 1v1 card duel.">
+    <meta name="twitter:image" content="http://localhost:4001/phalanx/assets/img/og-image.svg">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Phalanx",
+      "url": "http://localhost:4001/phalanx/",
+      "description": "A tactical head-to-head card duel you can play with standard suited decks.",
+      "about": {
+        "@type": "VideoGame",
+        "name": "Phalanx",
+        "url": "http://localhost:4001/phalanx/",
+        "description": "A tactical head-to-head card duel you can play with standard suited decks.",
+        "genre": "Card Game",
+        "numberOfPlayers": {
+          "@type": "QuantitativeValue",
+          "minValue": 2,
+          "maxValue": 2
+        },
+        "gamePlatform": "Tabletop",
+        "playMode": "MultiPlayer"
+      }
+    }
+    </script>
+    <link rel="icon" type="image/svg+xml" href="/phalanx/assets/img/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/phalanx/assets/css/site.css">
+    <script data-goatcounter="https://just3ws.goatcounter.com/count"
+            async src="https://gc.zgo.at/count.js"></script>
+    <script src="/phalanx/assets/js/goatcounter-events.js" defer></script>
+    
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="/phalanx/">Phalanx</a>
+    <nav aria-label="Primary">
+      <ul class="nav-list">
+        <li><a href="/phalanx/how-to-play/">How to Play</a></li>
+        <li><a href="/phalanx/rules/">Rules</a></li>
+        <li><a href="/phalanx/about-phalanx/">About</a></li>
+        <li><a href="/phalanx/status/">Status</a></li>
+        <li><a href="/phalanx/roadmap/">Roadmap</a></li>
+        <li><a href="/phalanx/get-involved/">Get Involved</a></li>
+        <li><a href="/phalanx/support/">Support</a></li>
+        <li><a href="/phalanx/faq/">FAQ</a></li>
+        <li><a href="/phalanx/history/">History</a></li>
+        <li><a class="nav-play" href="https://phalanx-game.fly.dev" target="_blank" rel="noopener noreferrer">Play &rarr;</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+    <main id="main" class="container">
+      <h1 id="the-rules-of-engagement">The Rules of Engagement</h1>
+
+<p class="small-note">This document provides a scannable overview of Phalanx’s mechanical framework.</p>
+
+<section class="hero">
+  <h2>Your Objective</h2>
+  <p>Your goal in Phalanx is to overwhelm your opponent. You'll deploy cards into a tactical formation and attack in columns, aiming to break through their lines and reduce their Life Points (LP) to zero. Victory can also be claimed if your opponent cannot draw or reinforce, running out of cards completely.</p>
+</section>
+
+<section class="two-col">
+  <article class="card">
+    <h2>Card Values &amp; Tactics</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Rank</th><th>Combat Value</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Ace</td><td>1 (Unkillable*)</td></tr>
+          <tr><td>2 through 10</td><td>Face value</td></tr>
+          <tr><td>Jack, Queen, King</td><td>11 (Combatant)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="small-note">*Aces cannot be destroyed by normal damage, but another Ace will destroy them instantly.</p>
+  </article>
+
+  <article class="card">
+    <h2>Conditions for Victory</h2>
+    <ul class="quick-list">
+      <li><strong>LP Depletion:</strong> Reduce your opponent’s Life Points to zero.</li>
+      <li><strong>Formation Collapse:</strong> Your opponent has no cards left on the battlefield and cannot reinforce.</li>
+      <li><strong>Attrition:</strong> Your opponent cannot draw from their deck and cannot reinforce their formation.</li>
+    </ul>
+  </article>
+</section>
+
+<section class="card">
+  <h2>Anatomy of a Combat Turn</h2>
+  <ol class="quick-list">
+    <li><strong>Attack:</strong> Choose a Front-row card from your formation. Select an opposing column.</li>
+    <li><strong>Target Selection:</strong> Attacks always target the Front-row card in the selected column first.</li>
+    <li><strong>Damage Resolution:</strong> Damage cascades down the column: Front-card, then Back-card, then Player LP.</li>
+    <li><strong>Suit Trigger:</strong> Automated suit powers (Shields and Weapons) activate during resolution.</li>
+    <li><strong>Reinforce Phase:</strong> Any open position in your formation may be reinforced from your hand.</li>
+    <li><strong>Pass Control:</strong> Control is handed back to the opponent.</li>
+  </ol>
+</section>
+
+<section class="card">
+  <h2>Formation Architecture</h2>
+  <p>Your **Front Row** is your first line of offense and primary shield. The **Back Row** provides tactical depth, absorbs overflow damage from major attacks, and steps into the Front Row if it falls. Mastering this column-based rotation is the key to high-level Phalanx play.</p>
+</section>
+
+<div class="cta-row">
+  <a class="button-link primary" href="https://phalanx-game.fly.dev" target="_blank" rel="noopener noreferrer">Play the Digital Alpha &rarr;</a>
+  <a class="button-link" href="/phalanx/suits-strategy/">Suits &amp; Strategy</a>
+</div>
+
+<p class="small-note">Note: Canonical draft rules are actively maintained in the main repository <a href="https://github.com/just3ws/phalanx/blob/main/docs/RULES.md" target="_blank" rel="noopener noreferrer">RULES.md</a>.</p>
+
+    </main>
+    <footer class="site-footer">
+  <div class="container footer-inner">
+    <p>Phalanx is a tactical two-player card duel playable with standard suited playing cards.</p>
+    <p>
+      <a href="/phalanx/status/">Status</a>
+      <span aria-hidden="true">|</span>
+      <a href="/phalanx/get-involved/">Get Involved</a>
+      <span aria-hidden="true">|</span>
+      <a href="/phalanx/support/">Support</a>
+      <span aria-hidden="true">|</span>
+      <a href="/phalanx/quick-reference/">Printable Quick Reference</a>
+      <span aria-hidden="true">|</span>
+      <a href="/phalanx/sitemap.xml">Sitemap</a>
+    </p>
+    <p class="small-note">Rules are evolving. Canonical draft rules and implementation contracts live in the main Phalanx repository.</p>
+  </div>
+</footer>
+
+    <script src="/phalanx/assets/js/basicLightbox.min.js"></script>
+    
+    
+    
+    
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('.history-gallery figure img').forEach(function(img) {
+          img.style.cursor = 'pointer'; // Indicate it's clickable
+          img.addEventListener('click', function() {
+            basicLightbox.create('<img src="' + img.src + '" alt="' + img.alt + '">').show();
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

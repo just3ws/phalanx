@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  
+  <url>
+    <loc>http://localhost:4001/phalanx/about-phalanx/</loc>
+  </url>
+  
+  <url>
+    <loc>http://localhost:4001/phalanx/battle-calculator-tests/</loc>
+  </url>
+  
+  <url>
+    <loc>http://localhost:4001/phalanx/battle-calculator/</loc>
+  </url>
+  
+  <url>
+    <loc>http://localhost:4001/phalanx/build-with-phalanx/</loc>
+  </url>
+  
+  <url>
+    <loc>http://localhost:4001/phalanx/faq/</loc>
+  </url>
+  
+  <url>
+    <loc>http://localhost:4001/phalanx/get-involved/</loc>
+  </url>
+  
+  <url>
+    <loc>http://localhost:4001/phalanx/history/</loc>
+  </url>
+  
+  <url>
+    <loc>http://localhost:4001/phalanx/how-to-play/</loc>
+  </url>
+  
+  <url>
+    <loc>http://localhost:4001/phalanx/</loc>
+  </url>
+  
+  <url>
+    <loc>http://localhost:4001/phalanx/quick-reference/</loc>
+  </url>
+  
+  <url>
+    <loc>http://localhost:4001/phalanx/roadmap/</loc>
+  </url>
+  
+  <url>
+    <loc>http://localhost:4001/phalanx/rules/</loc>
+  </url>
+  
+  <url>
+    <loc>http://localhost:4001/phalanx/status/</loc>
+  </url>
+  
+  <url>
+    <loc>http://localhost:4001/phalanx/suits-strategy/</loc>
+  </url>
+  
+  <url>
+    <loc>http://localhost:4001/phalanx/support/</loc>
+  </url>
+  
+  <url>
+    <loc>http://localhost:4001/phalanx/technical-details/</loc>
+  </url>
+  
+</urlset>

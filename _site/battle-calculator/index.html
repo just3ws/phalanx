@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Battle Calculator | Phalanx</title>
+    <meta name="description" content="Simulate one Phalanx column attack with suit bonuses, overflow, and discard outcomes.">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Battle Calculator | Phalanx">
+    <meta property="og:description" content="Simulate one Phalanx column attack with suit bonuses, overflow, and discard outcomes.">
+    <meta property="og:url" content="http://localhost:4001/phalanx/battle-calculator/">
+    <meta property="og:image" content="http://localhost:4001/phalanx/assets/img/og-image.svg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Battle Calculator | Phalanx">
+    <meta name="twitter:description" content="Simulate one Phalanx column attack with suit bonuses, overflow, and discard outcomes.">
+    <meta name="twitter:image" content="http://localhost:4001/phalanx/assets/img/og-image.svg">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Phalanx",
+      "url": "http://localhost:4001/phalanx/",
+      "description": "A tactical head-to-head card duel you can play with standard suited decks.",
+      "about": {
+        "@type": "VideoGame",
+        "name": "Phalanx",
+        "url": "http://localhost:4001/phalanx/",
+        "description": "A tactical head-to-head card duel you can play with standard suited decks.",
+        "genre": "Card Game",
+        "numberOfPlayers": {
+          "@type": "QuantitativeValue",
+          "minValue": 2,
+          "maxValue": 2
+        },
+        "gamePlatform": "Tabletop",
+        "playMode": "MultiPlayer"
+      }
+    }
+    </script>
+    <link rel="icon" type="image/svg+xml" href="/phalanx/assets/img/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/phalanx/assets/css/site.css">
+    <script data-goatcounter="https://just3ws.goatcounter.com/count"
+            async src="https://gc.zgo.at/count.js"></script>
+    <script src="/phalanx/assets/js/goatcounter-events.js" defer></script>
+    
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="/phalanx/">Phalanx</a>
+    <nav aria-label="Primary">
+      <ul class="nav-list">
+        <li><a href="/phalanx/how-to-play/">How to Play</a></li>
+        <li><a href="/phalanx/rules/">Rules</a></li>
+        <li><a href="/phalanx/about-phalanx/">About</a></li>
+        <li><a href="/phalanx/status/">Status</a></li>
+        <li><a href="/phalanx/roadmap/">Roadmap</a></li>
+        <li><a href="/phalanx/get-involved/">Get Involved</a></li>
+        <li><a href="/phalanx/support/">Support</a></li>
+        <li><a href="/phalanx/faq/">FAQ</a></li>
+        <li><a href="/phalanx/history/">History</a></li>
+        <li><a class="nav-play" href="https://phalanx-game.fly.dev" target="_blank" rel="noopener noreferrer">Play &rarr;</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+    <main id="main" class="container">
+      <h1 id="battle-calculator">Battle Calculator</h1>
+
+<section class="card">
+  <h2>Simulate One Column Attack</h2>
+  <p>Select an attacker and the defending front/back cards, then run the battle simulation.</p>
+  <p class="small-note"><strong>Rules Mode</strong> picks which battle logic profile is used. See "Mode Guide" below for exact differences.</p>
+  <div class="calculator-grid">
+    <label class="field">
+      <span>Rules Mode</span>
+      <select id="battle-mode" aria-label="Rules mode">
+        <option value="intro_rules">Current Rules</option>
+        <option value="legacy_reference">Historical Rules</option>
+      </select>
+    </label>
+
+    <label class="field">
+      <span>Attacker Card</span>
+      <select id="attacker-card" aria-label="Attacker card"></select>
+    </label>
+
+    <label class="field">
+      <span>Defender Front Card</span>
+      <select id="front-card" aria-label="Defender front card"></select>
+    </label>
+
+    <label class="field">
+      <span>Defender Back Card</span>
+      <select id="back-card" aria-label="Defender back card"></select>
+    </label>
+  </div>
+  <p>
+    <button id="simulate-battle" type="button" class="button-link">Simulate Battle</button>
+  </p>
+  <p><a href="/phalanx/battle-calculator-tests/">Open calculator unit tests</a></p>
+</section>
+
+<section class="card">
+  <h2>Mode Guide</h2>
+  <p><strong>Current Rules</strong> reflects the current intended rules behavior on this site. <strong>Historical Rules</strong> preserves the older prototype ordering for reference/comparison.</p>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Step</th><th>Historical Rules</th><th>Current Rules</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Diamond shield vs Club bonus order</td><td>Club doubles overflow first, then Diamond absorbs.</td><td>Diamond absorbs overflow first, then Club doubles what remains.</td></tr>
+        <tr><td>Heart trigger</td><td>Heart shield triggers when no card is behind that Heart card.</td><td>Heart shield triggers when no card is behind that Heart card.</td></tr>
+        <tr><td>Spade LP bonus</td><td>Doubles final LP damage.</td><td>Doubles final LP damage.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="small-note"><strong>If you're unsure:</strong> use <strong>Current Rules</strong>. Use <strong>Historical Rules</strong> only when checking older examples.</p>
+</section>
+
+<section class="card" aria-live="polite">
+  <h2>Battle Result</h2>
+  <p class="small-note">Result output includes stage-by-stage damage totals: attacker base, after front, after back, and final player LP damage.</p>
+  <div id="battle-result">
+    <p class="small-note">Run a simulation to see LP damage, suit effects, and which cards survive.</p>
+  </div>
+</section>
+
+<section class="card">
+  <h2>Suit Rules Used By This Calculator</h2>
+  <ul class="quick-list">
+    <li><strong>Diamond defender:</strong> If front breaks, Diamond grants a shield equal to its value to absorb overflow before back-row damage.</li>
+    <li><strong>Heart defender:</strong> Works like a shield when there is no card behind it (player directly behind).</li>
+    <li><strong>Club attacker:</strong> Applies extra pressure to the back-row defender.</li>
+    <li><strong>Spade attacker:</strong> Doubles final LP damage once overflow reaches the player.</li>
+    <li><strong>Ace defender exception:</strong> A front-row Ace is not discarded by non-Ace direct attacks; it is discarded only by a direct Ace-vs-Ace front-row attack.</li>
+  </ul>
+  <p><strong>Heart vs Diamond trigger:</strong> Diamond triggers when a card is behind it. Heart triggers when no card is behind it.</p>
+  <p><strong>Example (Historical):</strong> 10C into 1D with back 5S: overflow 9 -&gt; Club 18 -&gt; Diamond shields 1 -&gt; 17 hits back.</p>
+  <p><strong>Example (Current):</strong> 10C into 1D with back 5S: overflow 9 -&gt; Diamond shields 1 -&gt; Club 16 -&gt; 16 hits back.</p>
+  <p class="small-note">This simulator uses the site's published suit behavior and legacy reference battle math for concrete timing/order.</p>
+</section>
+
+    </main>
+    <footer class="site-footer">
+  <div class="container footer-inner">
+    <p>Phalanx is a tactical two-player card duel playable with standard suited playing cards.</p>
+    <p>
+      <a href="/phalanx/status/">Status</a>
+      <span aria-hidden="true">|</span>
+      <a href="/phalanx/get-involved/">Get Involved</a>
+      <span aria-hidden="true">|</span>
+      <a href="/phalanx/support/">Support</a>
+      <span aria-hidden="true">|</span>
+      <a href="/phalanx/quick-reference/">Printable Quick Reference</a>
+      <span aria-hidden="true">|</span>
+      <a href="/phalanx/sitemap.xml">Sitemap</a>
+    </p>
+    <p class="small-note">Rules are evolving. Canonical draft rules and implementation contracts live in the main Phalanx repository.</p>
+  </div>
+</footer>
+
+    <script src="/phalanx/assets/js/basicLightbox.min.js"></script>
+    
+    
+    <script src="/phalanx/assets/js/battle-resolver.js"></script>
+    
+    
+    <script src="/phalanx/assets/js/battle-calculator.js"></script>
+    
+    
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('.history-gallery figure img').forEach(function(img) {
+          img.style.cursor = 'pointer'; // Indicate it's clickable
+          img.addEventListener('click', function() {
+            basicLightbox.create('<img src="' + img.src + '" alt="' + img.alt + '">').show();
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

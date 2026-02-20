@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>How to Play | Phalanx</title>
+    <meta name="description" content="Your first deployment in Phalanx, from setup to victory.">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="How to Play | Phalanx">
+    <meta property="og:description" content="Your first deployment in Phalanx, from setup to victory.">
+    <meta property="og:url" content="http://localhost:4001/phalanx/how-to-play/">
+    <meta property="og:image" content="http://localhost:4001/phalanx/assets/img/og-image.svg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="How to Play | Phalanx">
+    <meta name="twitter:description" content="Your first deployment in Phalanx, from setup to victory.">
+    <meta name="twitter:image" content="http://localhost:4001/phalanx/assets/img/og-image.svg">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Phalanx",
+      "url": "http://localhost:4001/phalanx/",
+      "description": "A tactical head-to-head card duel you can play with standard suited decks.",
+      "about": {
+        "@type": "VideoGame",
+        "name": "Phalanx",
+        "url": "http://localhost:4001/phalanx/",
+        "description": "A tactical head-to-head card duel you can play with standard suited decks.",
+        "genre": "Card Game",
+        "numberOfPlayers": {
+          "@type": "QuantitativeValue",
+          "minValue": 2,
+          "maxValue": 2
+        },
+        "gamePlatform": "Tabletop",
+        "playMode": "MultiPlayer"
+      }
+    }
+    </script>
+    <link rel="icon" type="image/svg+xml" href="/phalanx/assets/img/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/phalanx/assets/css/site.css">
+    <script data-goatcounter="https://just3ws.goatcounter.com/count"
+            async src="https://gc.zgo.at/count.js"></script>
+    <script src="/phalanx/assets/js/goatcounter-events.js" defer></script>
+    
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="/phalanx/">Phalanx</a>
+    <nav aria-label="Primary">
+      <ul class="nav-list">
+        <li><a href="/phalanx/how-to-play/">How to Play</a></li>
+        <li><a href="/phalanx/rules/">Rules</a></li>
+        <li><a href="/phalanx/about-phalanx/">About</a></li>
+        <li><a href="/phalanx/status/">Status</a></li>
+        <li><a href="/phalanx/roadmap/">Roadmap</a></li>
+        <li><a href="/phalanx/get-involved/">Get Involved</a></li>
+        <li><a href="/phalanx/support/">Support</a></li>
+        <li><a href="/phalanx/faq/">FAQ</a></li>
+        <li><a href="/phalanx/history/">History</a></li>
+        <li><a class="nav-play" href="https://phalanx-game.fly.dev" target="_blank" rel="noopener noreferrer">Play &rarr;</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+    <main id="main" class="container">
+      <h1 id="your-first-deployment">Your First Deployment</h1>
+
+<section class="hero">
+  <h2>Tactical Essentials</h2>
+  <ul class="quick-list">
+    <li><strong>Participants:</strong> Two-player tactical duel.</li>
+    <li><strong>Armament:</strong> One standard deck per player (recommended) or one shared deck.</li>
+    <li><strong>Objective:</strong> Deplete the opponent’s 20 LP or destroy their entire formation.</li>
+  </ul>
+  <p class="small-note">Use Ace through King. Jokers are currently excluded from core tactical rules.</p>
+</section>
+
+<section class="card">
+  <h2>1. Setting the Battlefield</h2>
+  <ol class="quick-list">
+    <li><strong>Shuffle &amp; Draw:</strong> Prepare your deck and draw your starting hand.</li>
+    <li><strong>Deploy:</strong> Secretly place 8 cards into your 4x2 formation. Your formation consists of a **Front Row** (offensive/defensive line) and a **Back Row** (support/reserve).</li>
+    <li><strong>Initiate:</strong> Once both formations are locked, the first turn begins.</li>
+  </ol>
+</section>
+
+<section class="formation" aria-labelledby="formation-title">
+  <h2 id="formation-title">Formation Intelligence</h2>
+  <p class="row-label">Front row (Facing Opponent)</p>
+  <div class="formation-grid" role="img" aria-label="Diagram of a two-row, four-column Phalanx formation.">
+    <div class="slot">F1</div>
+    <div class="slot">F2</div>
+    <div class="slot">F3</div>
+    <div class="slot">F4</div>
+  </div>
+  <p class="arrow">↓ Damage Path: Front → Back → Player LP ↓</p>
+  <p class="row-label">Back row (Reserves)</p>
+  <div class="formation-grid">
+    <div class="slot back">B1</div>
+    <div class="slot back">B2</div>
+    <div class="slot back">B3</div>
+    <div class="slot back">B4</div>
+  </div>
+</section>
+
+<section class="card">
+  <h2>2. The Rhythm of Combat</h2>
+  <ol class="quick-list">
+    <li><strong>Select Attacker:</strong> Choose one active card from your Front Row.</li>
+    <li><strong>Target Column:</strong> Direct your attack at one of the opponent’s four columns.</li>
+    <li><strong>Resolve Damage:</strong> Damage cascades down the column. It hits the Front card first, any **Overflow** hits the Back card, and remaining damage hits the Player’s LP.</li>
+    <li><strong>Reinforce:</strong> If a card is destroyed, you may reinforce that column from your hand during your next phase.</li>
+    <li><strong>Pass:</strong> Control shifts to your opponent.</li>
+  </ol>
+</section>
+
+<section class="card">
+  <h2>3. Suit Powers (Automated)</h2>
+  <p>Suits are more than just colors; they are tactical modifiers that trigger during combat:</p>
+  <ul class="quick-list">
+    <li><strong>♦ Diamonds:</strong> On death, grants a Shield to the column to absorb further overflow.</li>
+    <li><strong>♥ Hearts:</strong> Grants a Shield only if it is the last card standing in its column.</li>
+    <li><strong>♣ Clubs:</strong> Overflow damage into the Back Row is doubled (×2).</li>
+    <li><strong>♠ Spades:</strong> Overflow damage into the Player LP is doubled (×2).</li>
+  </ul>
+</section>
+
+<div class="cta-row">
+  <a class="button-link primary" href="https://phalanx-game.fly.dev" target="_blank" rel="noopener noreferrer">Enter Digital Alpha &rarr;</a>
+  <a class="button-link" href="/phalanx/quick-reference/">Print Quick Reference</a>
+</div>
+
+<p class="small-note">Note: This guide is for rapid onboarding. Detailed edge cases and mechanical definitions are maintained in the <a href="https://github.com/just3ws/phalanx/blob/main/docs/RULES.md" target="_blank" rel="noopener noreferrer">Official Rules (RULES.md)</a>.</p>
+
+    </main>
+    <footer class="site-footer">
+  <div class="container footer-inner">
+    <p>Phalanx is a tactical two-player card duel playable with standard suited playing cards.</p>
+    <p>
+      <a href="/phalanx/status/">Status</a>
+      <span aria-hidden="true">|</span>
+      <a href="/phalanx/get-involved/">Get Involved</a>
+      <span aria-hidden="true">|</span>
+      <a href="/phalanx/support/">Support</a>
+      <span aria-hidden="true">|</span>
+      <a href="/phalanx/quick-reference/">Printable Quick Reference</a>
+      <span aria-hidden="true">|</span>
+      <a href="/phalanx/sitemap.xml">Sitemap</a>
+    </p>
+    <p class="small-note">Rules are evolving. Canonical draft rules and implementation contracts live in the main Phalanx repository.</p>
+  </div>
+</footer>
+
+    <script src="/phalanx/assets/js/basicLightbox.min.js"></script>
+    
+    
+    
+    
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('.history-gallery figure img').forEach(function(img) {
+          img.style.cursor = 'pointer'; // Indicate it's clickable
+          img.addEventListener('click', function() {
+            basicLightbox.create('<img src="' + img.src + '" alt="' + img.alt + '">').show();
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
