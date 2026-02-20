@@ -1,13 +1,26 @@
 ---
 title: The Design Journey
-description: A sequential look at the birth of Phalanx, from physical cards to the complete design notebook.
+description: The origin story of Phalanx, from a rainy afternoon at Camp Tesomas to the design notebook.
 ---
 
 # The Design Journey (2022)
 
-<p class="small-note">Tap or click any image to enlarge. This sequence follows the exact evolution of Phalanx from a kitchen-table experiment to a fully documented tactical engine.</p>
+<section class="hero" style="text-align: left; padding: 2.5rem;">
+  <p>Phalanx was born from necessity during a rainy afternoon at <strong>Camp Tesomas</strong>. As an Eagle Scout, I’ve spent plenty of time in the woods, but this particular day was a choice between getting soaked in the freezing rain or hanging out in my tent.</p>
+  
+  <p>With no phone and no distractions, I found myself wishing I’d brought my <strong>Magic: The Gathering</strong> cards for a tournament later that week. It sparked a challenge: could I capture the deep, back-and-forth tactical tension of collectible dueling giants like <em>Magic</em>, <em>Yu-Gi-Oh!</em>, or <em>Disney Lorcana</em>—games that often require expensive, specialized decks—using only what we had in abundance at camp? A standard deck of playing cards.</p>
+
+  <p>I grabbed a pen and a notebook and started writing. For the rest of the week, that book went everywhere with me. I jotted notes, sketched formations, and eventually convinced everyone who would entertain the notion to sit down for a match. That field testing proved the concept: the game wasn’t just functional; it was fun. These photos capture that original notebook exactly as it looked when I got home.</p>
+</section>
 
 <div class="notebook-viewer">
+  <figure class="notebook-page">
+    <img src="{{ '/assets/history/primary/images/pen.jpg' | relative_url }}" alt="The Pen" loading="lazy">
+    <figcaption>
+      <strong>The Pen</strong>
+      <br><span class="page-desc">The start of it all: drafting the first rules at Camp Tesomas.</span>
+    </figcaption>
+  </figure>
   <figure class="notebook-page">
     <img src="{{ '/assets/history/primary/images/cards.jpg' | relative_url }}" alt="The Cards" loading="lazy">
     <figcaption>
@@ -16,16 +29,9 @@ description: A sequential look at the birth of Phalanx, from physical cards to t
     </figcaption>
   </figure>
   <figure class="notebook-page">
-    <img src="{{ '/assets/history/primary/images/pen.jpg' | relative_url }}" alt="The Pen" loading="lazy">
+    <img src="{{ '/assets/history/primary/images/toolset.jpg' | relative_url }}" alt="Field Prototyping" loading="lazy">
     <figcaption>
-      <strong>The Pen</strong>
-      <br><span class="page-desc">The tools of creation: documenting rules and mechanics by hand.</span>
-    </figcaption>
-  </figure>
-  <figure class="notebook-page">
-    <img src="{{ '/assets/history/primary/images/toolset.jpg' | relative_url }}" alt="Cards on the Notebook" loading="lazy">
-    <figcaption>
-      <strong>Cards on the Notebook</strong>
+      <strong>Field Prototyping</strong>
       <br><span class="page-desc">Merging physical cards with notebook-driven logic.</span>
     </figcaption>
   </figure>
