@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: http://localhost:4001/phalanx/sitemap.xml
+Sitemap: https://www.just3ws.com/phalanx/sitemap.xml

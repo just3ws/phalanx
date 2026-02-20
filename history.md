@@ -24,6 +24,14 @@ description: How Phalanx evolved from notebook sketches to modern digital and ta
 </section>
 
 <section class="card">
+  <h2>Original Design Notebook</h2>
+  <p>Explore the 28-page foundational notebook where the core mechanics of Phalanx were first defined. From initial layout sketches to suit power definitions, these pages capture the birth of the game.</p>
+  <div class="cta-row">
+    <a class="button-link" href="{{ '/history/notebook/' | relative_url }}">View Design Notebook (28 Pages) &rarr;</a>
+  </div>
+</section>
+
+<section class="card">
   <h2>Early Physical Prototyping</h2>
   <div class="history-gallery">
     <figure>
@@ -37,32 +45,6 @@ description: How Phalanx evolved from notebook sketches to modern digital and ta
     <figure>
       <img src="{{ '/assets/history/primary/images/pen.jpg' | relative_url }}" alt="Pen and notebook setup used during rules sketching">
       <figcaption>Notebook-first iteration process.</figcaption>
-    </figure>
-  </div>
-</section>
-
-<section class="card">
-  <h2>Notebook Archive Samples</h2>
-  <div class="history-gallery">
-    <figure>
-      <img src="{{ '/assets/history/primary/notebook/cover_01_front.png' | relative_url }}" alt="Front cover scan of historical Phalanx notebook">
-      <figcaption>Notebook cover scan.</figcaption>
-    </figure>
-    <figure>
-      <img src="{{ '/assets/history/primary/notebook/page_01.png' | relative_url }}" alt="Notebook page sample 1 from early Phalanx concept">
-      <figcaption>Early concept page.</figcaption>
-    </figure>
-    <figure>
-      <img src="{{ '/assets/history/primary/notebook/page_08.png' | relative_url }}" alt="Notebook page sample 8 showing game structure exploration">
-      <figcaption>Structure exploration.</figcaption>
-    </figure>
-    <figure>
-      <img src="{{ '/assets/history/primary/notebook/page_19.png' | relative_url }}" alt="Notebook page sample 19 for mechanics notes">
-      <figcaption>Mechanics iteration notes.</figcaption>
-    </figure>
-    <figure>
-      <img src="{{ '/assets/history/primary/notebook/page_26.png' | relative_url }}" alt="Notebook page sample 26 from design progression">
-      <figcaption>Later notebook progression.</figcaption>
     </figure>
   </div>
 </section>

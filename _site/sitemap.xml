@@ -3,67 +3,71 @@
   
   
   <url>
-    <loc>http://localhost:4001/phalanx/about-phalanx/</loc>
+    <loc>https://www.just3ws.com/phalanx/about-phalanx/</loc>
   </url>
   
   <url>
-    <loc>http://localhost:4001/phalanx/battle-calculator-tests/</loc>
+    <loc>https://www.just3ws.com/phalanx/battle-calculator-tests/</loc>
   </url>
   
   <url>
-    <loc>http://localhost:4001/phalanx/battle-calculator/</loc>
+    <loc>https://www.just3ws.com/phalanx/battle-calculator/</loc>
   </url>
   
   <url>
-    <loc>http://localhost:4001/phalanx/build-with-phalanx/</loc>
+    <loc>https://www.just3ws.com/phalanx/build-with-phalanx/</loc>
   </url>
   
   <url>
-    <loc>http://localhost:4001/phalanx/faq/</loc>
+    <loc>https://www.just3ws.com/phalanx/faq/</loc>
   </url>
   
   <url>
-    <loc>http://localhost:4001/phalanx/get-involved/</loc>
+    <loc>https://www.just3ws.com/phalanx/get-involved/</loc>
   </url>
   
   <url>
-    <loc>http://localhost:4001/phalanx/history/</loc>
+    <loc>https://www.just3ws.com/phalanx/history/</loc>
   </url>
   
   <url>
-    <loc>http://localhost:4001/phalanx/how-to-play/</loc>
+    <loc>https://www.just3ws.com/phalanx/how-to-play/</loc>
   </url>
   
   <url>
-    <loc>http://localhost:4001/phalanx/</loc>
+    <loc>https://www.just3ws.com/phalanx/</loc>
   </url>
   
   <url>
-    <loc>http://localhost:4001/phalanx/quick-reference/</loc>
+    <loc>https://www.just3ws.com/phalanx/history/notebook/</loc>
   </url>
   
   <url>
-    <loc>http://localhost:4001/phalanx/roadmap/</loc>
+    <loc>https://www.just3ws.com/phalanx/quick-reference/</loc>
   </url>
   
   <url>
-    <loc>http://localhost:4001/phalanx/rules/</loc>
+    <loc>https://www.just3ws.com/phalanx/roadmap/</loc>
   </url>
   
   <url>
-    <loc>http://localhost:4001/phalanx/status/</loc>
+    <loc>https://www.just3ws.com/phalanx/rules/</loc>
   </url>
   
   <url>
-    <loc>http://localhost:4001/phalanx/suits-strategy/</loc>
+    <loc>https://www.just3ws.com/phalanx/status/</loc>
   </url>
   
   <url>
-    <loc>http://localhost:4001/phalanx/support/</loc>
+    <loc>https://www.just3ws.com/phalanx/suits-strategy/</loc>
   </url>
   
   <url>
-    <loc>http://localhost:4001/phalanx/technical-details/</loc>
+    <loc>https://www.just3ws.com/phalanx/support/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.just3ws.com/phalanx/technical-details/</loc>
   </url>
   
 </urlset>
